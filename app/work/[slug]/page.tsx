@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ViewTransition } from "react";
+import { PageShell } from "@/components/layout/page-shell";
 import { projects } from "@/data/projects";
 
 export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
@@ -10,8 +11,8 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
   if (!project) notFound();
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pt-28 pb-16">
-      <Link href="/work" className="text-sm text-zinc-500">
+    <PageShell>
+      <Link href="/work" className="font-nav text-sm text-white/60">
         ← Proyectos
       </Link>
       <ViewTransition name={`project-${project.slug}`}>
@@ -20,12 +21,10 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
           style={{ backgroundColor: project.color }}
         />
       </ViewTransition>
-      <h1 className="mt-6 text-2xl font-semibold tracking-tight">
+      <h1 className="font-serif mt-6 text-2xl font-medium tracking-tight text-white">
         {project.title}
       </h1>
-      <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-        {project.description}
-      </p>
-    </div>
+      <p className="font-nav mt-2 text-white/70">{project.description}</p>
+    </PageShell>
   );
 }

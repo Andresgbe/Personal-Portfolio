@@ -5,12 +5,11 @@ export function Hero() {
   return (
     <section className="hero-sky relative flex min-h-[90vh] flex-col overflow-hidden">
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-6 text-center">
-        <h1 className="font-serif text-4xl font-medium tracking-tight text-white sm:text-6xl">
+        <h1 className="animate-float font-serif text-4xl font-medium tracking-tight text-white sm:text-6xl">
           Andrés Gil
         </h1>
         <p className="mt-4 max-w-xl text-balance text-white/70 sm:text-lg">
-          Frontend Developer construyendo productos web con React, Vue y
-          Supabase
+          Programador web. Construyo lo que sueñas.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link

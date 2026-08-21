@@ -13,7 +13,9 @@ export function ProjectGrid() {
               style={{ backgroundColor: project.color }}
             />
           </ViewTransition>
-          <p className="mt-2 text-sm font-medium">{project.title}</p>
+          <p className="font-nav mt-2 text-sm font-medium text-white">
+            {project.title}
+          </p>
         </Link>
       ))}
     </div>
