@@ -2,7 +2,8 @@
 
 import { motion, type Variants } from "framer-motion";
 import { ServiceCard } from "@/components/ui/service-card";
-import { services } from "@/data/services";
+import type { Service } from "@/data/services";
+import { resolveIcon } from "@/lib/icons/registry";
 
 const container: Variants = {
   hidden: {},
@@ -11,7 +12,7 @@ const container: Variants = {
   },
 };
 
-export function ServicesGrid() {
+export function ServicesGrid({ services }: { services: Service[] }) {
   return (
     <motion.div
       initial="hidden"
@@ -20,9 +21,20 @@ export function ServicesGrid() {
       variants={container}
       className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
-      {services.map((service) => (
-        <ServiceCard key={service.title} {...service} />
-      ))}
+      {services.map((service) => {
+        // Resolved once per service here, then passed down as a prop —
+        // ServiceCard renders it via destructuring (like AutomationRow does
+        // for automations), not by calling resolveIcon in its own render.
+        const icon = resolveIcon(service.icon_name);
+        return (
+          <ServiceCard
+            key={service.title}
+            icon={icon}
+            title={service.title}
+            description={service.description}
+          />
+        );
+      })}
     </motion.div>
   );
 }

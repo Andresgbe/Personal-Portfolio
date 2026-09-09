@@ -93,13 +93,15 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .hill-layer,
-  .animate-float {
+  .animate-float,
+  .animate-ping {
     animation: none;
   }
 }
 
 /* Manual override from the header switch — independent of OS preference. */
 [data-motion="off"] .hill-layer,
-[data-motion="off"] .animate-float {
+[data-motion="off"] .animate-float,
+[data-motion="off"] .animate-ping {
   animation: none;
 }

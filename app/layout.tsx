@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
-import { Header } from "@/components/layout/header";
 import { MotionProvider } from "@/components/providers/motion-provider";
 import "./globals.css";
 
@@ -48,10 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Script id="motion-init" strategy="beforeInteractive">
           {MOTION_INIT_SCRIPT}
         </Script>
-        <MotionProvider>
-          <Header />
-          {children}
-        </MotionProvider>
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

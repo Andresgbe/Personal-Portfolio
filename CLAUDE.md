@@ -9,8 +9,12 @@ Personal portfolio built with Next.js App Router, TypeScript, and Tailwind CSS v
 - `app/` — routes only (`layout.tsx`, `page.tsx`, route segments). Keep this folder limited to Next.js routing files.
 - `components/ui/` — small reusable atoms (e.g. `Hill`).
 - `components/sections/` — landing sections (`Hero`, `ProjectGrid`, etc.).
-- `components/layout/` — persistent site chrome (`Header`), rendered from the root layout so it appears on every route.
-- `data/` — static content (projects, experience, links, etc.) consumed by pages/components, imported via `@/data/...`.
+- `components/layout/` — persistent site chrome (`Header`), rendered from `app/(marketing)/layout.tsx` so it appears on every public route. `/admin` is a sibling route (outside the `(marketing)` group) with its own chrome — it does not get this Header.
+- `data/` — types plus **fallback** content (projects, services, etc.), imported via `@/data/...`. Real content lives in Supabase and is edited from `/admin`; these arrays only render when Supabase isn't configured (see `supabase/SETUP.md`) and double as the seed data in `supabase/migrations/0001_init.sql`.
+- `lib/queries/` — the actual data-fetching functions pages call (`getSoftwareProjects()`, `getServices()`, etc.) — Supabase-backed, falling back to `data/*.ts` when unconfigured.
+- `lib/supabase/` — Supabase client factories (browser/server/middleware) and the `isSupabaseConfigured()` guard.
+- `lib/icons/registry.ts` — curated string-name → `LucideIcon` map, since DB rows store icon names, not components.
+- `app/admin/` — the CMS: Supabase Auth–gated (`proxy.ts` + `app/admin/(protected)/layout.tsx`), one section per content type, each with its own `actions.ts` (Server Actions) alongside its pages.
 - `public/` — static assets (images, icons).
 
 The `@/*` path alias resolves to the project root (see `tsconfig.json`), so prefer `@/components/...` and `@/data/...` over relative imports across folders.
