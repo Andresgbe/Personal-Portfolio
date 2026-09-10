@@ -12,10 +12,10 @@ type HillProps = {
 export function Hill({ path, color, opacity, duration, bottom, className }: HillProps) {
   return (
     <svg
-      viewBox="0 0 1440 320"
+      viewBox="0 0 1440 600"
       preserveAspectRatio="none"
       aria-hidden="true"
-      className={`hill-layer absolute inset-x-0 w-full${className ? ` ${className}` : ""}`}
+      className={`hill-layer absolute inset-x-0 h-full w-full${className ? ` ${className}` : ""}`}
       style={{ bottom, opacity, animationDuration: `${duration}s` }}
     >
       <path d={path} fill={color} />

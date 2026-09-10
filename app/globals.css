@@ -11,6 +11,9 @@
   --hero-hill-mid: #17293f;
   --hero-hill-front: #24405c;
   --hero-accent: #f2b880;
+
+  /* One step lighter than --hero-sky-bottom, for sections after the hero. */
+  --section-bg: #0d1b2e;
 }
 
 @theme inline {
@@ -34,11 +37,27 @@ body {
   font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
 
+/* Tailwind doesn't generate a utility for custom --font-* theme keys that
+   aren't sans/serif/mono, so this is a plain rule instead of `@theme`. */
+.font-nav {
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
 .hero-sky {
   background: radial-gradient(
     120% 100% at 50% -10%,
     var(--hero-sky-top) 0%,
     var(--hero-sky-bottom) 65%
+  );
+}
+
+/* Continues the hero's gradient into a slightly lighter tone, so sections
+   after it don't cut abruptly. */
+.section-sky {
+  background: linear-gradient(
+    180deg,
+    var(--hero-sky-bottom) 0%,
+    var(--section-bg) 100%
   );
 }
 
