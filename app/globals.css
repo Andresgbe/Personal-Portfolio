@@ -77,8 +77,31 @@ body {
   }
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hill-layer {
+  .hill-layer,
+  .animate-float,
+  .animate-ping {
     animation: none;
   }
+}
+
+/* Manual override from the header switch — independent of OS preference. */
+[data-motion="off"] .hill-layer,
+[data-motion="off"] .animate-float,
+[data-motion="off"] .animate-ping {
+  animation: none;
 }

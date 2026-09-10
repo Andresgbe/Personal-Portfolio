@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MotionToggle } from "@/components/ui/motion-toggle";
 
 // Each category is its own route (English paths); labels stay Spanish (page copy).
 const NAV_LINKS = [
@@ -33,6 +34,9 @@ export function Header() {
             </li>
           ))}
         </ul>
+        <div className="ml-auto">
+          <MotionToggle />
+        </div>
       </nav>
     </header>
   );
