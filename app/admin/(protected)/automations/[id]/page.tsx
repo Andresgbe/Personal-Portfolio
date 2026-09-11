@@ -12,7 +12,7 @@ export default async function EditAutomationPage({
 
   const { data: automation } = await supabase
     .from("automations")
-    .select("id, slug, title, year, description, role, stack, icon_name, status, color")
+    .select("id, slug, title, year, description, role, stack, icon_name, color")
     .eq("id", id)
     .maybeSingle();
 

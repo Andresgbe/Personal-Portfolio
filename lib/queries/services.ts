@@ -1,6 +1,6 @@
 import { services as fallbackServices, type Service } from "@/data/services";
 import { isSupabaseConfigured } from "@/lib/supabase/is-configured";
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/public";
 
 type ServiceRow = {
   title: string;
@@ -15,7 +15,7 @@ type ServiceRow = {
 export async function getServices(): Promise<Service[]> {
   if (!isSupabaseConfigured()) return fallbackServices;
 
-  const supabase = await createClient();
+  const supabase = createPublicClient();
   const { data, error } = await supabase
     .from("services")
     .select("title, description, icon_name")

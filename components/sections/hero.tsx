@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { HillsBackground } from "@/components/sections/hills-background";
+import { ButtonLink } from "@/components/ui/buttons";
 import { getSiteSettings } from "@/lib/queries/site-settings";
 
 export async function Hero() {
@@ -15,18 +15,10 @@ export async function Hero() {
           {heroTagline}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/work"
-            className="rounded-full bg-[var(--hero-accent)] px-6 py-3 text-sm font-medium text-[#0a1420] transition-transform hover:-translate-y-0.5"
-          >
-            Ver proyectos
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white/90 backdrop-blur-sm transition-colors hover:bg-white/10"
-          >
+          <ButtonLink href="/work">Ver proyectos</ButtonLink>
+          <ButtonLink href="/contact" variant="secondary">
             Contactar
-          </Link>
+          </ButtonLink>
         </div>
       </div>
 

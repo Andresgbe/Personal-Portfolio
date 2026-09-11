@@ -6,8 +6,6 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-export type ProjectStatus = "in-progress" | "done";
-
 // One frame of a project's gallery. Until there are real screenshots, `src` is
 // omitted and the flat `color` stands in for the image.
 export type Shot = {
@@ -23,7 +21,6 @@ type ProjectBase = {
   role: string;
   stack: string[];
   year: string;
-  status: ProjectStatus;
   color: string;
   url?: string;
   gallery?: Shot[];
@@ -59,7 +56,6 @@ export const softwareProjects: SoftwareProject[] = [
       "Rediseño de identidad y sitio para un estudio fotográfico que necesitaba que su trabajo, y no la interfaz, fuera lo primero que se ve.",
     role: "Diseño y desarrollo",
     stack: ["Next.js", "Tailwind"],
-    status: "in-progress",
     color: "#6366f1",
   },
   {
@@ -72,7 +68,6 @@ export const softwareProjects: SoftwareProject[] = [
       "Panel de analítica para un equipo de operaciones que vivía entre planillas sueltas.",
     role: "Producto y frontend",
     stack: ["React", "PostgreSQL"],
-    status: "in-progress",
     color: "#f59e0b",
   },
   {
@@ -85,7 +80,6 @@ export const softwareProjects: SoftwareProject[] = [
       "App de reservas para un negocio de servicios, pensada para que el turno se saque en menos de un minuto.",
     role: "Diseño y desarrollo",
     stack: ["Next.js", "Supabase"],
-    status: "done",
     color: "#22c55e",
   },
   {
@@ -98,7 +92,6 @@ export const softwareProjects: SoftwareProject[] = [
       "Sitio corporativo con foco en confianza y claridad: menos ruido, más respuestas.",
     role: "Diseño y desarrollo",
     stack: ["Next.js", "CMS"],
-    status: "done",
     color: "#ef4444",
   },
   {
@@ -111,7 +104,6 @@ export const softwareProjects: SoftwareProject[] = [
       "Landing de lanzamiento para un producto SaaS, optimizada para convertir visitas en pruebas gratuitas.",
     role: "Diseño y desarrollo",
     stack: ["Next.js", "Tailwind"],
-    status: "done",
     color: "#14b8a6",
   },
 ];
@@ -127,7 +119,6 @@ export const automations: Automation[] = [
     role: "Automatización",
     stack: ["Make", "Google Sheets"],
     icon: RefreshCw,
-    status: "in-progress",
     color: "#7c3aed",
   },
   {
@@ -140,7 +131,6 @@ export const automations: Automation[] = [
     role: "Automatización",
     stack: ["n8n", "WhatsApp API"],
     icon: MessageCircle,
-    status: "done",
     color: "#0ea5e9",
   },
   {
@@ -153,7 +143,6 @@ export const automations: Automation[] = [
     role: "Automatización",
     stack: ["Python", "Cron"],
     icon: BarChart3,
-    status: "done",
     color: "#d97706",
   },
   {
@@ -166,7 +155,6 @@ export const automations: Automation[] = [
     role: "Automatización",
     stack: ["Make", "OCR"],
     icon: FileText,
-    status: "done",
     color: "#059669",
   },
 ];

@@ -12,7 +12,6 @@ type ProjectRow = {
   description: string;
   role: string;
   stack: string[];
-  status: "in-progress" | "done";
   color: string;
   url: string | null;
 };
@@ -36,7 +35,7 @@ export default async function EditProjectPage({
 
   const { data: project } = await supabase
     .from("software_projects")
-    .select("id, slug, title, category, year, description, role, stack, status, color, url")
+    .select("id, slug, title, category, year, description, role, stack, color, url")
     .eq("id", id)
     .maybeSingle();
 

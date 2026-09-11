@@ -9,7 +9,6 @@ type ProjectFormValues = {
   description?: string;
   role?: string;
   stack?: string[];
-  status?: "in-progress" | "done";
   color?: string;
   url?: string | null;
 };
@@ -87,17 +86,6 @@ export function ProjectForm({ values = {} }: { values?: ProjectFormValues }) {
           />
         </label>
 
-        <label className={LABEL}>
-          Estado
-          <select
-            name="status"
-            defaultValue={values.status ?? "in-progress"}
-            className={FIELD}
-          >
-            <option value="in-progress">En curso</option>
-            <option value="done">Finalizado</option>
-          </select>
-        </label>
 
         <label className={LABEL}>
           Color (placeholder mientras no hay capturas)

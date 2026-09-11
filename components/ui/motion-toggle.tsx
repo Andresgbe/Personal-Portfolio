@@ -17,16 +17,13 @@ export function MotionToggle() {
       className="flex items-center gap-2 text-xs text-white/60 transition-colors hover:text-white/90"
     >
       <span className="hidden sm:inline">Light version</span>
-      <span
-        className={`relative h-6 w-11 rounded-full border border-white/20 transition-colors duration-200 ${
-          lightVersion ? "bg-[var(--hero-accent)]" : "bg-white/10"
-        }`}
-      >
-        <span
-          className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-200 ${
-            lightVersion ? "translate-x-5" : "translate-x-0"
-          }`}
-        />
+      {/* The switch's own position is driven by CSS off `html[data-motion]`
+          rather than by `lightVersion`, so this markup renders identically on
+          the server and the client (no hydration mismatch) and is already in
+          the right position on first paint — the inline script in the root
+          layout sets the attribute before the browser paints. */}
+      <span className="motion-switch relative h-6 w-11 rounded-full border border-white/20 transition-colors duration-200">
+        <span className="motion-switch-knob absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-200" />
       </span>
     </button>
   );

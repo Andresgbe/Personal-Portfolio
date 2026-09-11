@@ -4,17 +4,16 @@ import {
   softwareProjects as fallbackSoftwareProjects,
   type Automation,
   type Project,
-  type ProjectStatus,
   type Shot,
   type SoftwareProject,
 } from "@/data/projects";
 import { resolveIcon } from "@/lib/icons/registry";
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/public";
 import { isSupabaseConfigured } from "@/lib/supabase/is-configured";
 
 const GALLERY_BUCKET = "project-gallery";
 
-type SupabaseClient = Awaited<ReturnType<typeof createClient>>;
+type SupabaseClient = ReturnType<typeof createPublicClient>;
 
 type SoftwareProjectRow = {
   id: string;
@@ -25,7 +24,6 @@ type SoftwareProjectRow = {
   description: string;
   role: string;
   stack: string[];
-  status: ProjectStatus;
   color: string;
   url: string | null;
 };
@@ -46,7 +44,6 @@ type AutomationRow = {
   role: string;
   stack: string[];
   icon_name: string;
-  status: ProjectStatus;
   color: string;
 };
 
@@ -74,7 +71,6 @@ function mapSoftwareProject(
     description: row.description,
     role: row.role,
     stack: row.stack,
-    status: row.status,
     color: row.color,
     url: row.url ?? undefined,
     gallery: shotRows
@@ -93,7 +89,6 @@ function mapAutomation(row: AutomationRow): Automation {
     role: row.role,
     stack: row.stack,
     icon: resolveIcon(row.icon_name),
-    status: row.status,
     color: row.color,
   };
 }
@@ -101,10 +96,10 @@ function mapAutomation(row: AutomationRow): Automation {
 export async function getSoftwareProjects(): Promise<SoftwareProject[]> {
   if (!isSupabaseConfigured()) return fallbackSoftwareProjects;
 
-  const supabase = await createClient();
+  const supabase = createPublicClient();
   const { data: projectRows, error } = await supabase
     .from("software_projects")
-    .select("id, slug, title, category, year, description, role, stack, status, color, url")
+    .select("id, slug, title, category, year, description, role, stack, color, url")
     .order("sort_order", { ascending: true });
 
   if (error || !projectRows) {
@@ -125,10 +120,10 @@ export async function getSoftwareProjects(): Promise<SoftwareProject[]> {
 export async function getAutomations(): Promise<Automation[]> {
   if (!isSupabaseConfigured()) return fallbackAutomations;
 
-  const supabase = await createClient();
+  const supabase = createPublicClient();
   const { data, error } = await supabase
     .from("automations")
-    .select("slug, title, year, description, role, stack, icon_name, status, color")
+    .select("slug, title, year, description, role, stack, icon_name, color")
     .order("sort_order", { ascending: true });
 
   if (error || !data) {
@@ -144,11 +139,11 @@ export async function getProjectBySlug(slug: string): Promise<Project | undefine
     return fallbackProjects.find((project) => project.slug === slug);
   }
 
-  const supabase = await createClient();
+  const supabase = createPublicClient();
 
   const { data: projectRow } = await supabase
     .from("software_projects")
-    .select("id, slug, title, category, year, description, role, stack, status, color, url")
+    .select("id, slug, title, category, year, description, role, stack, color, url")
     .eq("slug", slug)
     .maybeSingle();
 
@@ -164,7 +159,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | undefine
 
   const { data: automationRow } = await supabase
     .from("automations")
-    .select("slug, title, year, description, role, stack, icon_name, status, color")
+    .select("slug, title, year, description, role, stack, icon_name, color")
     .eq("slug", slug)
     .maybeSingle();
 

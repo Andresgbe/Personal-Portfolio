@@ -22,7 +22,6 @@ export async function saveAutomation(formData: FormData) {
     role: String(formData.get("role") ?? ""),
     stack: parseStack(formData.get("stack")),
     icon_name: String(formData.get("icon_name") ?? ""),
-    status: String(formData.get("status") ?? "in-progress"),
     color: String(formData.get("color") ?? "#7c3aed"),
   };
 

@@ -32,7 +32,6 @@ export async function saveProject(formData: FormData) {
     description: String(formData.get("description") ?? ""),
     role: String(formData.get("role") ?? ""),
     stack: parseStack(formData.get("stack")),
-    status: String(formData.get("status") ?? "in-progress"),
     color: String(formData.get("color") ?? "#6366f1"),
     url: formData.get("url") ? String(formData.get("url")) : null,
   };

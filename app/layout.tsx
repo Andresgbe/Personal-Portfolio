@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
 import { Fraunces, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
-import Script from "next/script";
 import { MotionProvider } from "@/components/providers/motion-provider";
 import "./globals.css";
 
-// Runs before hydration so a previously-saved "off" preference takes effect
-// before first paint — otherwise the CSS animations would flash on, then off.
-const MOTION_INIT_SCRIPT = `
-  try {
-    if (localStorage.getItem("motion-enabled") === "false") {
-      document.documentElement.dataset.motion = "off";
-    }
-  } catch (e) {}
-`;
+// Runs synchronously while the browser parses the HTML — before first paint —
+// so a saved "off" preference is already in effect and the CSS animations
+// never flash on, then off. `data-motion` is deliberately absent from the JSX
+// below (no attribute means "on"), so React never manages it and can't clobber
+// what this sets on a re-render.
+const MOTION_INIT_SCRIPT = `(function(){try{if(localStorage.getItem("motion-enabled")==="false")document.documentElement.dataset.motion="off"}catch(e){}})()`;
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -42,11 +38,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistMono.variable} ${fraunces.variable} ${jakarta.variable} h-full scroll-smooth antialiased`}
+      // The script below adds `data-motion` before React hydrates; without
+      // this, React reports the extra attribute as a hydration mismatch.
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: MOTION_INIT_SCRIPT }} />
+      </head>
       <body className="min-h-full flex flex-col">
-        <Script id="motion-init" strategy="beforeInteractive">
-          {MOTION_INIT_SCRIPT}
-        </Script>
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

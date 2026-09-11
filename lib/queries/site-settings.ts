@@ -1,5 +1,5 @@
 import { isSupabaseConfigured } from "@/lib/supabase/is-configured";
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/public";
 
 export type SiteSettings = {
   heroTitle: string;
@@ -16,7 +16,7 @@ const FALLBACK: SiteSettings = {
 export async function getSiteSettings(): Promise<SiteSettings> {
   if (!isSupabaseConfigured()) return FALLBACK;
 
-  const supabase = await createClient();
+  const supabase = createPublicClient();
   const { data, error } = await supabase
     .from("site_settings")
     .select("hero_title, hero_tagline")

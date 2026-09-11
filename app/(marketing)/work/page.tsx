@@ -14,9 +14,6 @@ export default async function WorkPage() {
       <section className="mt-14">
         <div className="flex flex-wrap items-baseline gap-x-3.5 gap-y-1">
           <h2 className="font-serif text-2xl font-medium text-white">Software</h2>
-          <p className="font-nav text-[13px] text-white/45">
-            Productos y sitios completos, de la idea al deploy.
-          </p>
         </div>
         <div className="mt-7">
           <ProjectGrid projects={softwareProjects} />
