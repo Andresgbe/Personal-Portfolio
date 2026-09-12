@@ -22,7 +22,10 @@ export function PageShell({
     <section className="section-sky relative overflow-hidden">
       <HillsBackground className="top-0 h-[42rem] [-webkit-mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] sm:h-[48rem]" />
 
-      <div className={`relative z-10 mx-auto w-full ${maxWidth} px-6 pt-32 pb-24 sm:pt-40`}>
+      {/* pt reserves clearance for the absolutely-positioned Header, which is
+          two rows tall below `lg`. Same value at every width so no breakpoint
+          can land in a gap where the header is taller than the padding. */}
+      <div className={`relative z-10 mx-auto w-full ${maxWidth} px-6 pt-40 pb-24`}>
         {eyebrow && (
           <p className="font-nav text-[13px] tracking-[0.15em] text-white/50 uppercase">
             {eyebrow}

@@ -23,6 +23,25 @@ The `@/*` path alias resolves to the project root (see `tsconfig.json`), so pref
 
 - No default create-next-app boilerplate content — `app/page.tsx` and `app/layout.tsx` have been cleared of the starter template.
 - Keep content (text, project lists, etc.) in `data/` rather than hardcoded in components, so pages stay presentational.
-- The 4 landing categories are separate routes in English — `/services`, `/work`, `/about`, `/contact` — not anchor-scroll sections on the home page. `app/page.tsx` is just the `Hero`. On-page copy/labels stay in Spanish.
+- The 4 landing categories are separate routes in English — `/services`, `/projects`, `/about`, `/contact` — not anchor-scroll sections on the home page. `app/page.tsx` is just the `Hero`. On-page copy/labels stay in Spanish.
 - App-wide typeface is Fraunces (`--font-sans` / `--font-serif` in `globals.css`) — the intended fallback for the licensed "Means Web", since it has no free `@font-face` source. If Means Web is licensed later, swap the `@font-face` in `globals.css` and keep Fraunces as the CSS fallback stack.
 - Custom `--font-*` theme keys beyond `sans`/`serif`/`mono` don't get an auto-generated Tailwind utility (verified against the compiled CSS) — write a plain `.font-<name> { font-family: ... }` rule instead (see `.font-nav`).
+
+## Buttons
+
+All four button shapes live in `components/ui/buttons.tsx`. These were chosen deliberately from a set of options — **use them instead of hand-rolling button classes**, and extend that file rather than adding a fifth shape to a page.
+
+| Component | Where it goes | Its move on hover |
+| --- | --- | --- |
+| `ButtonLink` (default `primary`) | The one main action per page — "Ver proyectos", "Ver en vivo" | Arrow advances 4px; warm shadow underneath |
+| `ButtonLink variant="secondary"` | The alternative beside it — "Contactar" | Outline fills faintly (`white/10`) |
+| `IconLink` / `BackLink` | Icon-only controls, and "volver" | 44px circle brightens; back arrow nudges left 2px |
+| `ArrowLink` | Text links inside a paragraph or a spec list | Underline appears; arrow lifts up-right 2px |
+
+Rules that hold the set together:
+
+- **44px minimum touch target.** The pills get there via `py-3` over a 20px line box; the circle is `size-11`. Don't shrink either.
+- **Arrows are lucide icons, never the `←` / `↗` characters** — they align on the text baseline and can be animated independently of the label.
+- **Focus is an `outline`, not a `ring`.** The 2px gap has to show whatever background the control sits on, and the hero gradient and the flat section background are different colours.
+- **The accent is the primary action's colour.** Don't spend it on "volver" or on secondary controls, or the real call to action stops reading as the loudest thing on the page.
+- **A back control keeps its label visible** (that's `BackLink`, not `IconLink`) — on touch there is no hover to reveal where it goes.

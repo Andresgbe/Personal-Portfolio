@@ -22,7 +22,6 @@ export async function saveAutomation(formData: FormData) {
     role: String(formData.get("role") ?? ""),
     stack: parseStack(formData.get("stack")),
     icon_name: String(formData.get("icon_name") ?? ""),
-    status: String(formData.get("status") ?? "in-progress"),
     color: String(formData.get("color") ?? "#7c3aed"),
   };
 
@@ -40,7 +39,7 @@ export async function saveAutomation(formData: FormData) {
     if (error) throw new Error(error.message);
   }
 
-  revalidatePath("/work");
+  revalidatePath("/projects");
   redirect("/admin/automations");
 }
 
@@ -48,7 +47,7 @@ export async function deleteAutomation(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("automations").delete().eq("id", id);
   if (error) throw new Error(error.message);
-  revalidatePath("/work");
+  revalidatePath("/projects");
 }
 
 export async function reorderAutomations(orderedIds: string[]) {
@@ -58,5 +57,5 @@ export async function reorderAutomations(orderedIds: string[]) {
       supabase.from("automations").update({ sort_order: index }).eq("id", id),
     ),
   );
-  revalidatePath("/work");
+  revalidatePath("/projects");
 }

@@ -105,3 +105,94 @@ body {
 [data-motion="off"] .animate-ping {
   animation: none;
 }
+
+/* The header switch renders its own state from this attribute instead of from
+   React state — the attribute is set before first paint (and before
+   hydration), so the switch is never briefly in the wrong position. */
+.motion-switch {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.motion-switch-knob {
+  transform: translateX(0);
+}
+
+[data-motion="off"] .motion-switch {
+  background-color: var(--hero-accent);
+}
+
+[data-motion="off"] .motion-switch-knob {
+  transform: translateX(1.25rem);
+}
+
+/* ── View transitions: a project card morphing into its detail hero ──────── */
+
+/* The transition overlay swallows pointer events while it runs — let clicks
+   through to the live page underneath. */
+::view-transition {
+  pointer-events: none;
+}
+
+/* Page-level crossfade. Deliberately quick and opacity-only so it doesn't
+   compete with the morph happening on top of it. */
+::view-transition-old(root) {
+  animation: 140ms ease-in both vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 220ms ease-out 60ms both vt-fade-in;
+}
+
+/* The morph itself (the `share="morph"` pairs in ProjectCard/ProjectHero).
+   Short enough to read as direct rather than heavy. */
+::view-transition-group(.morph) {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* A touch of blur mid-flight hides the pixel stretching while a small 4:3
+   card becomes a full-bleed hero. Duration is set here too — animation
+   properties don't cascade from the group to this pseudo-element. */
+::view-transition-image-pair(.morph) {
+  animation: 300ms ease-in-out both vt-morph-blur;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-morph-blur {
+  40% {
+    filter: blur(2px);
+  }
+}
+
+/* "Light version" (and an OS reduced-motion preference) cut the transition to
+   an instant swap — the browser's own no-animation behaviour. The pseudo
+   element tree hangs off the root element, so these attach to `html` with no
+   descendant combinator. */
+html[data-motion="off"]::view-transition-group(*),
+html[data-motion="off"]::view-transition-old(*),
+html[data-motion="off"]::view-transition-new(*),
+html[data-motion="off"]::view-transition-image-pair(*) {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-image-pair(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

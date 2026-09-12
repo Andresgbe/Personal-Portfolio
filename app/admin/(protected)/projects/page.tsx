@@ -8,7 +8,6 @@ type ProjectRow = {
   slug: string;
   title: string;
   category: string;
-  status: "in-progress" | "done";
   color: string;
 };
 
@@ -16,7 +15,7 @@ export default async function ProjectsAdminPage() {
   const supabase = await createClient();
   const { data } = await supabase
     .from("software_projects")
-    .select("id, slug, title, category, status, color")
+    .select("id, slug, title, category, color")
     .order("sort_order", { ascending: true });
 
   const projects = (data ?? []) as ProjectRow[];
@@ -53,8 +52,7 @@ export default async function ProjectsAdminPage() {
                     {project.title}
                   </p>
                   <p className="font-nav truncate text-xs text-white/45">
-                    {project.category} ·{" "}
-                    {project.status === "in-progress" ? "En curso" : "Finalizado"}
+                    {project.category}
                   </p>
                 </div>
               </div>

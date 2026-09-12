@@ -8,7 +8,6 @@ type AutomationRowData = {
   id: string;
   title: string;
   icon_name: string;
-  status: "in-progress" | "done";
   color: string;
 };
 
@@ -16,7 +15,7 @@ export default async function AutomationsAdminPage() {
   const supabase = await createClient();
   const { data } = await supabase
     .from("automations")
-    .select("id, title, icon_name, status, color")
+    .select("id, title, icon_name, color")
     .order("sort_order", { ascending: true });
 
   const automations = (data ?? []) as AutomationRowData[];
@@ -59,9 +58,6 @@ export default async function AutomationsAdminPage() {
                   <div className="min-w-0">
                     <p className="font-nav truncate text-sm font-medium text-white">
                       {item.title}
-                    </p>
-                    <p className="font-nav truncate text-xs text-white/45">
-                      {item.status === "in-progress" ? "En curso" : "Finalizado"}
                     </p>
                   </div>
                 </div>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { StatusMarker } from "@/components/ui/status-indicator";
 import type { Automation } from "@/data/projects";
 
 // No screenshot to show here — an icon tile plus the stack carries it.
@@ -8,11 +7,11 @@ export function AutomationRow({ automation }: { automation: Automation }) {
 
   return (
     <Link
-      href={`/work/${automation.slug}`}
+      href={`/projects/${automation.slug}`}
       className="group flex items-start gap-6 border-b border-white/10 py-6.5 last:border-b-0"
     >
       <div
-        className="relative flex size-14 shrink-0 items-center justify-center rounded-xl"
+        className="flex size-14 shrink-0 items-center justify-center rounded-xl"
         style={{ backgroundColor: automation.color }}
       >
         <Icon
@@ -20,7 +19,6 @@ export function AutomationRow({ automation }: { automation: Automation }) {
           strokeWidth={1.75}
           aria-hidden="true"
         />
-        <StatusMarker status={automation.status} />
       </div>
 
       <div className="flex-1">
@@ -42,18 +40,9 @@ export function AutomationRow({ automation }: { automation: Automation }) {
         </ul>
       </div>
 
-      <div className="font-nav w-[110px] shrink-0 text-right">
-        <p className="text-[13px] text-white/45">{automation.year}</p>
-        <p
-          className={`mt-0.5 text-xs ${
-            automation.status === "in-progress"
-              ? "font-semibold text-[var(--hero-accent)]"
-              : "text-white/40"
-          }`}
-        >
-          {automation.status === "in-progress" ? "En curso" : "Finalizado"}
-        </p>
-      </div>
+      <p className="font-nav w-16 shrink-0 text-right text-[13px] text-white/45">
+        {automation.year}
+      </p>
     </Link>
   );
 }

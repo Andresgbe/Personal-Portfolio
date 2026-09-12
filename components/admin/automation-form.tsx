@@ -10,7 +10,6 @@ type AutomationFormValues = {
   role?: string;
   stack?: string[];
   icon_name?: string;
-  status?: "in-progress" | "done";
   color?: string;
 };
 
@@ -90,17 +89,6 @@ export function AutomationForm({ values = {} }: { values?: AutomationFormValues 
           </select>
         </label>
 
-        <label className={LABEL}>
-          Estado
-          <select
-            name="status"
-            defaultValue={values.status ?? "in-progress"}
-            className={FIELD}
-          >
-            <option value="in-progress">En curso</option>
-            <option value="done">Finalizado</option>
-          </select>
-        </label>
 
         <label className={LABEL}>
           Color
