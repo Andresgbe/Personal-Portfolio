@@ -6,7 +6,7 @@ import type { Project } from "@/data/projects";
 export function NextProjectBand({ project }: { project: Project }) {
   return (
     <Link
-      href={`/work/${project.slug}`}
+      href={`/projects/${project.slug}`}
       className="group mt-12 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-white/20 hover:bg-white/[0.06] sm:p-5"
     >
       <div className="flex min-w-0 items-center gap-4">

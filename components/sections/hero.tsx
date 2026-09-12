@@ -15,7 +15,7 @@ export async function Hero() {
           {heroTagline}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="/work">Ver proyectos</ButtonLink>
+          <ButtonLink href="/projects">Ver proyectos</ButtonLink>
           <ButtonLink href="/contact" variant="secondary">
             Contactar
           </ButtonLink>

@@ -8,7 +8,7 @@ import { getAutomations, getProjectBySlug, getSoftwareProjects } from "@/lib/que
 
 const META_LABEL = "font-nav text-[11px] tracking-[0.16em] text-white/40 uppercase";
 
-export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
+export default async function ProjectPage(props: PageProps<"/projects/[slug]">) {
   const { slug } = await props.params;
   const project = await getProjectBySlug(slug);
 
@@ -20,10 +20,10 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
   return (
     <main className="bg-[var(--section-bg)]">
       {/* One narrow column for the whole page — the detail view is something
-          you read, so it stays tighter than the grid on /work. Top padding
+          you read, so it stays tighter than the grid on /projects. Top padding
           matches PageShell so the content clears the floating header. */}
       <div className="mx-auto w-full max-w-4xl px-6 pt-40 pb-20">
-        <BackLink href="/work">Proyectos</BackLink>
+        <BackLink href="/projects">Proyectos</BackLink>
 
         <div className="mt-6">
           <ProjectHero project={project} />

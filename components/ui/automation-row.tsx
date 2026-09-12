@@ -7,7 +7,7 @@ export function AutomationRow({ automation }: { automation: Automation }) {
 
   return (
     <Link
-      href={`/work/${automation.slug}`}
+      href={`/projects/${automation.slug}`}
       className="group flex items-start gap-6 border-b border-white/10 py-6.5 last:border-b-0"
     >
       <div

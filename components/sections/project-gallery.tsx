@@ -18,7 +18,7 @@ export function ProjectGallery({ shots }: { shots: Shot[] }) {
           <figure key={shot.caption}>
             <ShotFrame
               shot={shot}
-              className="aspect-[16/10]"
+              className="aspect-[16/9]"
               sizes="(max-width: 640px) 100vw, 420px"
             />
             <figcaption className="font-nav mt-2.5 text-xs text-white/45">

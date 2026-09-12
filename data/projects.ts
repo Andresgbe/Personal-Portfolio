@@ -26,7 +26,7 @@ type ProjectBase = {
   gallery?: Shot[];
 };
 
-// Two kinds of work, shown differently on /work: software gets an image-led
+// Two kinds of work, shown differently on /projects: software gets an image-led
 // card grid, automations a compact list (no screenshot to show — what matters
 // is what it solves and with what).
 export type SoftwareProject = ProjectBase & {
@@ -159,7 +159,7 @@ export const automations: Automation[] = [
   },
 ];
 
-// Flat list for /work/[slug] lookups — both kinds live under the same route.
+// Flat list for /projects/[slug] lookups — both kinds live under the same route.
 export const projects: Project[] = [...softwareProjects, ...automations];
 
 // Placeholder frames, tinted from the project's own color so a gallery reads as
@@ -169,6 +169,13 @@ const PLACEHOLDER_SHOTS: Array<{ caption: string; mix: string }> = [
   { caption: "Detalle de interfaz", mix: "78%, #050810" },
   { caption: "Versión mobile", mix: "72%, #ffffff" },
 ];
+
+// The first gallery frame that carries a real image — the project's cover,
+// used by both its card on /projects and the hero on its own page. Undefined
+// while a project has no screenshots yet, and then the flat `color` stands in.
+export function coverShot(project: Project): Shot | undefined {
+  return project.gallery?.find((shot) => Boolean(shot.src));
+}
 
 export function galleryFor(project: Project): Shot[] {
   if (project.gallery && project.gallery.length > 0) return project.gallery;

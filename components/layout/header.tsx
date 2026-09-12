@@ -4,7 +4,7 @@ import { MotionToggle } from "@/components/ui/motion-toggle";
 // Each category is its own route (English paths); labels stay Spanish (page copy).
 const NAV_LINKS = [
   { label: "Servicios", href: "/services" },
-  { label: "Trabajos realizados", href: "/work" },
+  { label: "Trabajos realizados", href: "/projects" },
   { label: "Sobre mí", href: "/about" },
   { label: "Contacto", href: "/contact" },
 ];

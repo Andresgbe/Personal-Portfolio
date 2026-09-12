@@ -15,10 +15,10 @@ function parseStack(raw: FormDataEntryValue | null): string[] {
 }
 
 function revalidateProjectPages() {
-  revalidatePath("/work");
+  revalidatePath("/projects");
   // Broad on purpose: reordering/editing one project can change another's
   // "next project" sibling link on its detail page.
-  revalidatePath("/work/[slug]", "page");
+  revalidatePath("/projects/[slug]", "page");
 }
 
 export async function saveProject(formData: FormData) {

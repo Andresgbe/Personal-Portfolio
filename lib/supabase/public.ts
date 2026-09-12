@@ -4,7 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 //
 // The cookie-backed client in ./server.ts must NOT be used for public reads:
 // touching `cookies()` opts the route out of static prerendering, which turned
-// /, /work and /services dynamic and left the admin's `revalidatePath` calls
+// /, /projects and /services dynamic and left the admin's `revalidatePath` calls
 // with nothing to revalidate. None of this data depends on who is asking —
 // RLS grants `anon` read-only access — so no session is needed.
 export function createPublicClient() {

@@ -39,7 +39,7 @@ export async function saveAutomation(formData: FormData) {
     if (error) throw new Error(error.message);
   }
 
-  revalidatePath("/work");
+  revalidatePath("/projects");
   redirect("/admin/automations");
 }
 
@@ -47,7 +47,7 @@ export async function deleteAutomation(id: string) {
   const supabase = await createClient();
   const { error } = await supabase.from("automations").delete().eq("id", id);
   if (error) throw new Error(error.message);
-  revalidatePath("/work");
+  revalidatePath("/projects");
 }
 
 export async function reorderAutomations(orderedIds: string[]) {
@@ -57,5 +57,5 @@ export async function reorderAutomations(orderedIds: string[]) {
       supabase.from("automations").update({ sort_order: index }).eq("id", id),
     ),
   );
-  revalidatePath("/work");
+  revalidatePath("/projects");
 }
