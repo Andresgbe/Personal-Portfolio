@@ -21,8 +21,8 @@ export default async function AdminDashboard() {
 
   return (
     <div>
-      <h1 className="font-serif text-3xl font-medium text-white">Dashboard</h1>
-      <p className="font-nav mt-2 text-sm text-white/50">
+      <h1 className="font-display text-3xl font-medium text-ink">Dashboard</h1>
+      <p className="mt-2 text-sm text-ink/50">
         Editá el contenido del sitio desde acá.
       </p>
 
@@ -31,17 +31,17 @@ export default async function AdminDashboard() {
           <Link
             key={section.href}
             href={section.href}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-white/20 hover:bg-white/[0.06]"
+            className="rounded-2xl border border-ink/10 bg-ink/[0.03] p-6 transition-colors hover:border-ink/20 hover:bg-ink/[0.06]"
           >
-            <p className="font-serif text-3xl text-white">{counts[index]}</p>
-            <p className="font-nav mt-1 text-sm text-white/60">{section.label}</p>
+            <p className="font-display text-3xl text-ink">{counts[index]}</p>
+            <p className="mt-1 text-sm text-ink/60">{section.label}</p>
           </Link>
         ))}
       </div>
 
       <Link
         href="/admin/settings"
-        className="font-nav mt-6 inline-block text-sm text-white/50 hover:text-white"
+        className="mt-6 inline-block text-sm text-ink/50 hover:text-ink"
       >
         Ajustes del sitio →
       </Link>

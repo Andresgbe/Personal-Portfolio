@@ -14,8 +14,8 @@ type ProjectFormValues = {
 };
 
 const FIELD =
-  "rounded-lg border border-white/15 bg-white/5 px-3 py-2.5 text-white outline-none focus:border-[var(--hero-accent)]";
-const LABEL = "font-nav flex flex-col gap-1.5 text-sm text-white/70";
+  "rounded-lg border border-ink/15 bg-ink/5 px-3 py-2.5 text-ink outline-none focus:border-primary";
+const LABEL = "flex flex-col gap-1.5 text-sm text-ink/70";
 
 export function ProjectForm({ values = {} }: { values?: ProjectFormValues }) {
   return (
@@ -92,7 +92,7 @@ export function ProjectForm({ values = {} }: { values?: ProjectFormValues }) {
           <input
             type="color"
             name="color"
-            defaultValue={values.color ?? "#6366f1"}
+            defaultValue={values.color ?? "#3d8bff"}
             className={`${FIELD} h-11 p-1`}
           />
         </label>
@@ -122,7 +122,7 @@ export function ProjectForm({ values = {} }: { values?: ProjectFormValues }) {
 
       <button
         type="submit"
-        className="font-nav self-start rounded-full bg-[var(--hero-accent)] px-5 py-2.5 text-sm font-medium text-[#0a1420]"
+        className="self-start rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-bg"
       >
         Guardar
       </button>

@@ -13,19 +13,19 @@ export default async function WorkPage() {
     <PageShell eyebrow="Trabajos realizados" title="Proyectos" maxWidth="max-w-6xl">
       <section className="mt-14">
         <div className="flex flex-wrap items-baseline gap-x-3.5 gap-y-1">
-          <h2 className="font-serif text-2xl font-medium text-white">Software</h2>
+          <h2 className="font-display text-2xl font-medium text-ink">Software</h2>
         </div>
         <div className="mt-7">
           <ProjectGrid projects={softwareProjects} />
         </div>
       </section>
 
-      <section className="mt-18 border-t border-white/10 pt-10">
+      <section className="mt-18 border-t border-ink/10 pt-10">
         <div className="flex flex-wrap items-baseline gap-x-3.5 gap-y-1">
-          <h2 className="font-serif text-2xl font-medium text-white">
+          <h2 className="font-display text-2xl font-medium text-ink">
             Automatizaciones
           </h2>
-          <p className="font-nav text-[13px] text-white/45">
+          <p className="text-[13px] text-ink/45">
             Encargos puntuales que resuelven una tarea concreta.
           </p>
         </div>

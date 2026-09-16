@@ -21,19 +21,19 @@ export function Header() {
           restore the single-row desktop layout. Keeping this capped matters:
           the header is absolutely positioned, so pages have to reserve their
           own clearance for it (see PageShell). */}
-      <nav className="font-nav flex w-full flex-wrap items-center gap-x-6 gap-y-2 px-6 pt-8 pb-4 sm:gap-x-10 sm:px-20 sm:pt-12 sm:pb-6 lg:px-28">
-        <Link
-          href="/"
-          className="text-lg font-semibold text-[var(--hero-accent)]"
-        >
-          Andrés Gil
+      <nav className="flex w-full flex-wrap items-center gap-x-6 gap-y-2 px-6 pt-8 pb-4 sm:gap-x-10 sm:px-20 sm:pt-12 sm:pb-6 lg:px-28">
+        {/* The wordmark from the brand manual: the name in ink, the period in
+            the primary blue. The dot is the whole logo — it's the one place
+            the accent appears in the header, so the nav stays quiet. */}
+        <Link href="/" className="font-display text-lg text-ink">
+          Andrés Gil<span className="text-primary">.</span>
         </Link>
         <ul className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 sm:gap-x-6 lg:order-none lg:w-auto">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm text-white/80 transition-colors hover:text-white"
+                className="text-sm text-ink/80 transition-colors hover:text-ink"
               >
                 {link.label}
               </Link>

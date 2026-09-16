@@ -2,16 +2,20 @@ import { getSiteSettings } from "@/lib/queries/site-settings";
 import { saveSiteSettings } from "./actions";
 
 const FIELD =
-  "rounded-lg border border-white/15 bg-white/5 px-3 py-2.5 text-white outline-none focus:border-[var(--hero-accent)]";
-const LABEL = "font-nav flex flex-col gap-1.5 text-sm text-white/70";
+  "rounded-lg border border-ink/15 bg-ink/5 px-3 py-2.5 text-ink outline-none focus:border-primary";
+const LABEL = "flex flex-col gap-1.5 text-sm text-ink/70";
 
 export default async function SettingsPage() {
   const { heroTitle, heroTagline } = await getSiteSettings();
 
   return (
     <div>
-      <h1 className="font-serif text-3xl font-medium text-white">Ajustes</h1>
-      <p className="font-nav mt-2 text-sm text-white/50">Texto de la portada.</p>
+      <h1 className="font-display text-3xl font-medium text-ink">Ajustes</h1>
+      <p className="mt-2 text-sm text-ink/50">Texto de la portada.</p>
+      <p className="mt-1 text-sm text-muted">
+        Envuelve una o dos palabras entre <code className="font-mono text-secondary">*asteriscos*</code>{" "}
+        para resaltarlas en cian. Es el acento de la marca: una o dos palabras, nunca una frase entera.
+      </p>
 
       <form action={saveSiteSettings} className="mt-8 flex max-w-lg flex-col gap-5">
         <label className={LABEL}>
@@ -38,7 +42,7 @@ export default async function SettingsPage() {
 
         <button
           type="submit"
-          className="font-nav self-start rounded-full bg-[var(--hero-accent)] px-5 py-2.5 text-sm font-medium text-[#0a1420]"
+          className="self-start rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-bg"
         >
           Guardar
         </button>

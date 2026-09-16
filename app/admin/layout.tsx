@@ -8,12 +8,12 @@ import { isSupabaseConfigured } from "@/lib/supabase/is-configured";
 export default function AdminRootLayout({ children }: { children: ReactNode }) {
   if (!isSupabaseConfigured()) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#0a0f1a] px-6 text-center font-sans">
+      <div className="flex min-h-screen items-center justify-center bg-[#0b0f13] px-6 text-center font-sans">
         <div>
-          <p className="font-serif text-2xl text-white">Supabase no está configurado</p>
-          <p className="font-nav mt-3 max-w-md text-sm text-white/60">
+          <p className="font-display text-2xl text-ink">Supabase no está configurado</p>
+          <p className="mt-3 max-w-md text-sm text-ink/60">
             Seguí los pasos de{" "}
-            <code className="rounded bg-white/10 px-1.5 py-0.5 text-white/80">
+            <code className="rounded bg-ink/10 px-1.5 py-0.5 text-ink/80">
               supabase/SETUP.md
             </code>{" "}
             para activar el panel de admin.

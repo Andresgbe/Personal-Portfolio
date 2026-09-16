@@ -73,7 +73,7 @@ export function SortableAdminList({
   }
 
   if (ordered.length === 0) {
-    return <p className="font-nav text-sm text-white/40">{emptyLabel}</p>;
+    return <p className="text-sm text-ink/40">{emptyLabel}</p>;
   }
 
   return (
@@ -120,13 +120,13 @@ function SortableRow({
     <li
       ref={setNodeRef}
       style={style}
-      className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5"
+      className="flex items-center gap-3 rounded-lg border border-ink/10 bg-ink/[0.03] px-3 py-2.5"
     >
       <button
         type="button"
         {...attributes}
         {...listeners}
-        className="cursor-grab touch-none text-white/30 hover:text-white/60"
+        className="cursor-grab touch-none text-ink/30 hover:text-ink/60"
         aria-label="Reordenar"
       >
         <GripVertical className="size-4" aria-hidden="true" />
@@ -135,7 +135,7 @@ function SortableRow({
       <div className="min-w-0 flex-1">{children}</div>
 
       {editHref && (
-        <Link href={editHref} className="font-nav shrink-0 text-xs text-white/60 hover:text-white">
+        <Link href={editHref} className="shrink-0 text-xs text-ink/60 hover:text-ink">
           Editar
         </Link>
       )}
@@ -143,7 +143,7 @@ function SortableRow({
       <button
         type="button"
         onClick={onDelete}
-        className="shrink-0 text-white/30 hover:text-red-400"
+        className="shrink-0 text-ink/30 hover:text-red-400"
         aria-label="Eliminar"
       >
         <Trash2 className="size-4" aria-hidden="true" />

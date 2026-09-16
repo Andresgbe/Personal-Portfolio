@@ -23,10 +23,10 @@ export default async function ProjectsAdminPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="font-serif text-3xl font-medium text-white">Proyectos</h1>
+        <h1 className="font-display text-3xl font-medium text-ink">Proyectos</h1>
         <Link
           href="/admin/projects/new"
-          className="font-nav rounded-full bg-[var(--hero-accent)] px-4 py-2 text-sm font-medium text-[#0a1420]"
+          className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-bg"
         >
           Nuevo proyecto
         </Link>
@@ -48,10 +48,10 @@ export default async function ProjectsAdminPage() {
                   style={{ backgroundColor: project.color }}
                 />
                 <div className="min-w-0">
-                  <p className="font-nav truncate text-sm font-medium text-white">
+                  <p className="truncate text-sm font-medium text-ink">
                     {project.title}
                   </p>
-                  <p className="font-nav truncate text-xs text-white/45">
+                  <p className="truncate text-xs text-ink/45">
                     {project.category}
                   </p>
                 </div>

@@ -41,7 +41,7 @@ export function GalleryManager({
                   backgroundImage: shot.src ? `url(${shot.src})` : undefined,
                 }}
               />
-              <p className="font-nav truncate text-sm text-white">{shot.caption}</p>
+              <p className="truncate text-sm text-ink">{shot.caption}</p>
             </div>
           ),
         }))}
@@ -49,40 +49,40 @@ export function GalleryManager({
 
       <form
         action={uploadAction}
-        className="font-nav mt-5 flex flex-wrap items-end gap-3 border-t border-white/10 pt-5"
+        className="mt-5 flex flex-wrap items-end gap-3 border-t border-ink/10 pt-5"
       >
-        <label className="flex flex-col gap-1.5 text-sm text-white/70">
+        <label className="flex flex-col gap-1.5 text-sm text-ink/70">
           Imagen
           <input
             type="file"
             name="image"
             accept="image/*"
             required
-            className="text-xs text-white/60"
+            className="text-xs text-ink/60"
           />
         </label>
-        <label className="flex flex-col gap-1.5 text-sm text-white/70">
+        <label className="flex flex-col gap-1.5 text-sm text-ink/70">
           Título
           <input
             type="text"
             name="caption"
             required
             placeholder="Vista principal"
-            className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm text-white outline-none"
+            className="rounded-lg border border-ink/15 bg-ink/5 px-3 py-2 text-sm text-ink outline-none"
           />
         </label>
-        <label className="flex flex-col gap-1.5 text-sm text-white/70">
+        <label className="flex flex-col gap-1.5 text-sm text-ink/70">
           Color de respaldo
           <input
             type="color"
             name="color"
-            defaultValue="#6366f1"
-            className="h-9 w-14 rounded-lg border border-white/15 bg-white/5"
+            defaultValue="#3d8bff"
+            className="h-9 w-14 rounded-lg border border-ink/15 bg-ink/5"
           />
         </label>
         <button
           type="submit"
-          className="rounded-full border border-white/20 px-4 py-2 text-sm text-white hover:bg-white/10"
+          className="rounded-full border border-ink/20 px-4 py-2 text-sm text-ink hover:bg-ink/10"
         >
           Agregar imagen
         </button>

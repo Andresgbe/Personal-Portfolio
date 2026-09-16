@@ -30,19 +30,19 @@ export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps
         boxShadow: "0 24px 48px -16px rgba(0,0,0,0.5)",
       }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20 backdrop-blur-sm"
+      className="rounded-2xl border border-ink/10 bg-ink/5 p-6 shadow-lg shadow-black/20 backdrop-blur-sm"
     >
-      <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5">
+      <div className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-ink/5">
         <Icon
-          className="h-5 w-5 text-[var(--hero-accent)]"
+          className="h-5 w-5 text-secondary"
           strokeWidth={1.5}
           aria-hidden="true"
         />
       </div>
-      <h3 className="font-serif mt-4 text-lg font-medium text-white">
+      <h3 className="font-display mt-4 text-lg font-medium text-ink">
         {title}
       </h3>
-      <p className="font-nav mt-2 text-sm leading-relaxed text-white/70">
+      <p className="mt-2 text-sm leading-relaxed text-ink/70">
         {description}
       </p>
     </motion.div>

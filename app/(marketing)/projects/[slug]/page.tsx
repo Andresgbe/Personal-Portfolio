@@ -6,7 +6,7 @@ import { NextProjectBand } from "@/components/ui/next-project-band";
 import { galleryFor, nextProject } from "@/data/projects";
 import { getAutomations, getProjectBySlug, getSoftwareProjects } from "@/lib/queries/projects";
 
-const META_LABEL = "font-nav text-[11px] tracking-[0.16em] text-white/40 uppercase";
+const META_LABEL = "font-mono text-[11px] tracking-[0.16em] text-ink/40 uppercase";
 
 export default async function ProjectPage(props: PageProps<"/projects/[slug]">) {
   const { slug } = await props.params;
@@ -30,26 +30,26 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
         </div>
 
         <div className="mt-7">
-          <h1 className="font-serif text-[clamp(1.875rem,5vw,3rem)] leading-[1.05] font-medium tracking-[-0.02em] text-white">
+          <h1 className="font-display text-[clamp(1.875rem,5vw,3rem)] leading-[1.05] font-medium tracking-[-0.02em] text-ink">
             {project.title}
           </h1>
-          <p className="font-nav mt-4 max-w-2xl text-[15px] leading-relaxed text-white/65 sm:text-base">
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink/65 sm:text-base">
             {project.description}
           </p>
         </div>
 
-        <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 border-y border-white/10 py-6 sm:grid-cols-3">
+        <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 border-y border-ink/10 py-6 sm:grid-cols-3">
           <div>
             <dt className={META_LABEL}>Año</dt>
-            <dd className="font-nav mt-2 text-sm text-white/85">{project.year}</dd>
+            <dd className="mt-2 text-sm text-ink/85">{project.year}</dd>
           </div>
           <div>
             <dt className={META_LABEL}>Rol</dt>
-            <dd className="font-nav mt-2 text-sm text-white/85">{project.role}</dd>
+            <dd className="mt-2 text-sm text-ink/85">{project.role}</dd>
           </div>
           <div>
             <dt className={META_LABEL}>Stack</dt>
-            <dd className="font-nav mt-2 text-sm text-white/85">
+            <dd className="mt-2 text-sm text-ink/85">
               {project.stack.join(" · ")}
             </dd>
           </div>
