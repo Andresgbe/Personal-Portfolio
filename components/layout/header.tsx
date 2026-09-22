@@ -25,7 +25,7 @@ export function Header() {
         {/* The wordmark from the brand manual: the name in ink, the period in
             the primary blue. The dot is the whole logo — it's the one place
             the accent appears in the header, so the nav stays quiet. */}
-        <Link href="/" className="font-display text-lg text-ink">
+        <Link href="/" className="font-display -my-2 py-2 text-lg text-ink">
           Andrés Gil<span className="text-primary">.</span>
         </Link>
         <ul className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 sm:gap-x-6 lg:order-none lg:w-auto">
@@ -33,7 +33,7 @@ export function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm text-ink/80 transition-colors hover:text-ink"
+                className="flex min-h-10 items-center text-sm text-ink/80 transition-colors hover:text-ink"
               >
                 {link.label}
               </Link>

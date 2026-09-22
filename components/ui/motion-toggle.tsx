@@ -14,7 +14,7 @@ export function MotionToggle() {
       role="switch"
       aria-checked={lightVersion}
       onClick={toggle}
-      className="flex items-center gap-2 text-xs text-ink/60 transition-colors hover:text-ink/90"
+      className="-my-3 flex items-center gap-2 py-3 text-xs text-ink/60 transition-colors hover:text-ink/90"
     >
       <span className="hidden sm:inline">Light version</span>
       {/* The switch's own position is driven by CSS off `html[data-motion]`
