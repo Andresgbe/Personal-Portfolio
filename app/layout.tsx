@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { MotionProvider } from "@/components/providers/motion-provider";
 import "./globals.css";
 
@@ -10,22 +10,25 @@ import "./globals.css";
 // what this sets on a re-render.
 const MOTION_INIT_SCRIPT = `(function(){try{if(localStorage.getItem("motion-enabled")==="false")document.documentElement.dataset.motion="off"}catch(e){}})()`;
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// The three faces of the brand manual. Display carries the headlines, Inter
+// the body, and the mono is reserved for terminal-style detail: eyebrows,
+// meta labels, figure numbers.
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
-// App-wide typeface: fallback for "Means Web" (no free @font-face source available).
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-// UI chrome (nav, buttons, labels) — a cleaner sans reads better than the
-// editorial serif at small sizes, e.g. in the header nav.
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${fraunces.variable} ${jakarta.variable} h-full scroll-smooth antialiased`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased`}
       // The script below adds `data-motion` before React hydrates; without
       // this, React reports the extra attribute as a hydration mismatch.
       suppressHydrationWarning

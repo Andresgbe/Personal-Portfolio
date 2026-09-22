@@ -30,7 +30,7 @@ export function ShotFrame({
         />
       ) : (
         <ImageIcon
-          className="size-10 text-white/40"
+          className="size-10 text-ink/40"
           strokeWidth={1.25}
           aria-hidden="true"
         />

@@ -22,10 +22,10 @@ export default async function ServicesAdminPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="font-serif text-3xl font-medium text-white">Servicios</h1>
+        <h1 className="font-display text-3xl font-medium text-ink">Servicios</h1>
         <Link
           href="/admin/services/new"
-          className="font-nav rounded-full bg-[var(--hero-accent)] px-4 py-2 text-sm font-medium text-[#0a1420]"
+          className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-bg"
         >
           Nuevo servicio
         </Link>
@@ -44,14 +44,14 @@ export default async function ServicesAdminPage() {
               editHref: `/admin/services/${item.id}`,
               content: (
                 <div className="flex items-center gap-3">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-md border border-white/15 bg-white/5">
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-md border border-ink/15 bg-ink/5">
                     <Icon
-                      className="size-4 text-[var(--hero-accent)]"
+                      className="size-4 text-primary"
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />
                   </div>
-                  <p className="font-nav truncate text-sm font-medium text-white">
+                  <p className="truncate text-sm font-medium text-ink">
                     {item.title}
                   </p>
                 </div>

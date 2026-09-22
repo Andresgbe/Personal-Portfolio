@@ -20,7 +20,7 @@ export default async function EditServicePage({
 
   return (
     <div>
-      <h1 className="font-serif text-3xl font-medium text-white">{service.title}</h1>
+      <h1 className="font-display text-3xl font-medium text-ink">{service.title}</h1>
       <div className="mt-8 max-w-2xl">
         <ServiceForm values={service} />
       </div>

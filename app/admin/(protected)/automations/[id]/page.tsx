@@ -20,7 +20,7 @@ export default async function EditAutomationPage({
 
   return (
     <div>
-      <h1 className="font-serif text-3xl font-medium text-white">{automation.title}</h1>
+      <h1 className="font-display text-3xl font-medium text-ink">{automation.title}</h1>
       <div className="mt-8 max-w-2xl">
         <AutomationForm values={automation} />
       </div>

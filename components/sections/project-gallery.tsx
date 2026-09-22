@@ -9,7 +9,7 @@ export function ProjectGallery({ shots }: { shots: Shot[] }) {
 
   return (
     <section className="mt-12">
-      <h2 className="font-nav text-[11px] tracking-[0.16em] text-white/40 uppercase">
+      <h2 className="font-mono text-[11px] tracking-[0.16em] text-ink/40 uppercase">
         Piezas del proyecto
       </h2>
 
@@ -21,8 +21,8 @@ export function ProjectGallery({ shots }: { shots: Shot[] }) {
               className="aspect-[16/9]"
               sizes="(max-width: 640px) 100vw, 420px"
             />
-            <figcaption className="font-nav mt-2.5 text-xs text-white/45">
-              <span className="text-[var(--hero-accent)]">
+            <figcaption className="font-mono mt-2.5 text-xs text-ink/45">
+              <span className="text-secondary">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <span className="ml-2">{shot.caption}</span>

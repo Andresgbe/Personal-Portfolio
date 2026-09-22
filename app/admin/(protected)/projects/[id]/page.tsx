@@ -58,14 +58,14 @@ export default async function EditProjectPage({
 
   return (
     <div>
-      <h1 className="font-serif text-3xl font-medium text-white">{project.title}</h1>
+      <h1 className="font-display text-3xl font-medium text-ink">{project.title}</h1>
 
       <div className="mt-8 max-w-2xl">
         <ProjectForm values={project as ProjectRow} />
       </div>
 
-      <div className="mt-12 max-w-2xl border-t border-white/10 pt-8">
-        <h2 className="font-serif text-xl font-medium text-white">Galería</h2>
+      <div className="mt-12 max-w-2xl border-t border-ink/10 pt-8">
+        <h2 className="font-display text-xl font-medium text-ink">Galería</h2>
         <div className="mt-5">
           <GalleryManager projectId={project.id} shots={shots} />
         </div>

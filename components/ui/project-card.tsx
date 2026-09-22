@@ -35,13 +35,13 @@ export function ProjectCard({ project }: { project: SoftwareProject }) {
           )}
         </div>
       </ViewTransition>
-      <h3 className="font-serif mt-3.5 text-lg font-medium text-white">
+      <h3 className="font-display mt-3.5 text-lg font-medium text-ink">
         {project.title}
       </h3>
-      <p className="font-nav mt-1 text-[13px] text-white/55">
+      <p className="font-mono mt-1 text-[13px] text-ink/55">
         {project.category} · {project.year}
       </p>
-      <p className="font-nav mt-1.5 text-[13px] leading-relaxed text-white/45">
+      <p className="mt-1.5 text-[13px] leading-relaxed text-ink/45">
         {project.description}
       </p>
     </Link>

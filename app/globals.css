@@ -1,46 +1,54 @@
 @import "tailwindcss";
 
+/* ── Marca Andrés Gil · "Dark Dev" ────────────────────────────────────────
+   Paleta oficial (septiembre 2026). Los nombres son los mismos del manual
+   de marca, para que un token del PDF se pueda buscar tal cual en el código.
+   Regla de proporción: 60% fondo · 25% texto · 10% primario · 5% secundario,
+   es decir el cian se reserva para una o dos palabras/detalles por vista. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0f13;
+  --surface: #12171c; /* tarjetas */
+  --text: #f5f6f7; /* blanco suave: nunca #ffffff puro */
+  --muted: #8d96a0; /* texto secundario */
+  --primary: #3d8bff; /* botones, CTA, links */
+  --secondary: #00d4c8; /* palabra clave, detalles tipo terminal */
 
-  /* Hero sky/hills — fixed dark palette, independent of light/dark theme. */
-  --hero-sky-top: #16273f;
-  --hero-sky-bottom: #050810;
-  --hero-hill-back: #0d1826;
-  --hero-hill-mid: #17293f;
-  --hero-hill-front: #24405c;
-  --hero-accent: #f2b880;
+  /* Cielo y colinas del hero. Tintes neutros derivados de --bg y --surface:
+     el paisaje da profundidad sin meter un color fuera de la paleta. */
+  --hero-sky-top: #161d24;
+  --hero-sky-bottom: var(--bg);
+  --hero-hill-back: #10151a;
+  --hero-hill-mid: #161d24;
+  --hero-hill-front: #1e2730;
 
-  /* One step lighter than --hero-sky-bottom, for sections after the hero. */
-  --section-bg: #0d1b2e;
+  /* Un escalón por encima del fondo, para las secciones después del hero. */
+  --section-bg: var(--surface);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-fraunces);
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-fraunces);
-}
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Tailwind doesn't generate a utility for custom --font-* theme keys that
    aren't sans/serif/mono, so this is a plain rule instead of `@theme`. */
-.font-nav {
-  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+.font-display {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .hero-sky {
@@ -110,7 +118,7 @@ body {
    React state — the attribute is set before first paint (and before
    hydration), so the switch is never briefly in the wrong position. */
 .motion-switch {
-  background-color: rgb(255 255 255 / 0.1);
+  background-color: rgb(245 246 247 / 0.12);
 }
 
 .motion-switch-knob {
@@ -118,7 +126,7 @@ body {
 }
 
 [data-motion="off"] .motion-switch {
-  background-color: var(--hero-accent);
+  background-color: var(--primary);
 }
 
 [data-motion="off"] .motion-switch-knob {

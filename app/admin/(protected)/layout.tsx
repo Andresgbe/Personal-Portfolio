@@ -27,19 +27,19 @@ export default async function ProtectedAdminLayout({
   if (!user) redirect("/admin/login");
 
   return (
-    <div className="min-h-screen bg-[#0a0f1a] font-sans text-white">
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 px-8 py-4">
-        <nav className="font-nav flex flex-wrap items-center gap-6 text-sm">
+    <div className="min-h-screen bg-[#0b0f13] font-sans text-ink">
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 px-8 py-4">
+        <nav className="flex flex-wrap items-center gap-6 text-sm">
           {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="text-white/70 hover:text-white">
+            <Link key={item.href} href={item.href} className="text-ink/70 hover:text-ink">
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="font-nav flex items-center gap-4 text-xs text-white/50">
+        <div className="flex items-center gap-4 text-xs text-ink/50">
           <span>{user.email}</span>
           <form action={signOut}>
-            <button type="submit" className="text-white/60 hover:text-white">
+            <button type="submit" className="text-ink/60 hover:text-ink">
               Cerrar sesión
             </button>
           </form>

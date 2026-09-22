@@ -28,7 +28,7 @@ export function ProjectHero({ project }: { project: Project }) {
           />
         ) : (
           <ImageIcon
-            className="size-10 text-white/35"
+            className="size-10 text-ink/35"
             strokeWidth={1}
             aria-hidden="true"
           />
