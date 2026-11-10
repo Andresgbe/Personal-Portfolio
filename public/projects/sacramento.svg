@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" fill="none">
+  <rect width="1440" height="810" fill="#0B1E25"/>
+  <rect x="60" y="60" width="1320" height="690" rx="24" fill="#0F262E" stroke="#F7F5F1" stroke-opacity="0.12" stroke-width="2"/>
+  <rect x="60" y="60" width="280" height="690" rx="24" fill="#07161B"/>
+  <circle cx="105" cy="110" r="10" fill="#E8703A"/>
+  <rect x="130" y="102" width="140" height="16" rx="8" fill="#F7F5F1" fill-opacity="0.85"/>
+  <rect x="90" y="170" width="220" height="42" rx="10" fill="#E8703A" fill-opacity="0.18"/>
+  <rect x="110" y="185" width="130" height="12" rx="6" fill="#E8703A"/>
+  <rect x="110" y="245" width="150" height="12" rx="6" fill="#8CA8AE" fill-opacity="0.5"/>
+  <rect x="110" y="295" width="120" height="12" rx="6" fill="#8CA8AE" fill-opacity="0.5"/>
+  <rect x="110" y="345" width="160" height="12" rx="6" fill="#8CA8AE" fill-opacity="0.5"/>
+  <!-- Main Dashboard Area -->
+  <text x="390" y="135" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#F7F5F1">Centro Comercial Sacramento · Administración</text>
+  <text x="390" y="168" font-family="monospace" font-size="15" fill="#5EC2CC">LOCALES · ALQUILERES · SERVICIOS BÁSICOS · CAJA CHICA MULTIMONEDA</text>
+  <rect x="390" y="205" width="290" height="140" rx="16" fill="#153540" stroke="#F7F5F1" stroke-opacity="0.1"/>
+  <text x="418" y="245" font-family="monospace" font-size="14" fill="#8CA8AE">ALQUILERES COBRADOS</text>
+  <text x="418" y="300" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="#F7F5F1">94.2%</text>
+  <rect x="705" y="205" width="290" height="140" rx="16" fill="#153540" stroke="#F7F5F1" stroke-opacity="0.1"/>
+  <text x="733" y="245" font-family="monospace" font-size="14" fill="#8CA8AE">SERVICIOS BÁSICOS</text>
+  <text x="733" y="300" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="#5EC2CC">Al día</text>
+  <rect x="1020" y="205" width="310" height="140" rx="16" fill="#153540" stroke="#E8703A" stroke-opacity="0.4"/>
+  <text x="1048" y="245" font-family="monospace" font-size="14" fill="#E8703A">CAJA CHICA (USD / BS)</text>
+  <text x="1048" y="300" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="#F7F5F1">Multimoneda</text>
+  <!-- Table rows -->
+  <rect x="390" y="380" width="940" height="320" rx="16" fill="#07161B" fill-opacity="0.65" stroke="#F7F5F1" stroke-opacity="0.08"/>
+  <rect x="425" y="420" width="220" height="14" rx="7" fill="#F7F5F1" fill-opacity="0.8"/>
+  <rect x="720" y="420" width="120" height="14" rx="7" fill="#5EC2CC" fill-opacity="0.7"/>
+  <rect x="1150" y="414" width="140" height="26" rx="13" fill="#E8703A" fill-opacity="0.25"/>
+  <rect x="425" y="485" width="260" height="14" rx="7" fill="#F7F5F1" fill-opacity="0.6"/>
+  <rect x="720" y="485" width="140" height="14" rx="7" fill="#5EC2CC" fill-opacity="0.5"/>
+  <rect x="1150" y="479" width="140" height="26" rx="13" fill="#5EC2CC" fill-opacity="0.2"/>
+  <rect x="425" y="550" width="200" height="14" rx="7" fill="#F7F5F1" fill-opacity="0.6"/>
+  <rect x="720" y="550" width="110" height="14" rx="7" fill="#5EC2CC" fill-opacity="0.5"/>
+  <rect x="1150" y="544" width="140" height="26" rx="13" fill="#5EC2CC" fill-opacity="0.2"/>
+</svg>

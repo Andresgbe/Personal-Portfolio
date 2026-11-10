@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" fill="none">
+  <rect width="1440" height="810" fill="#071E1C"/>
+  <rect x="60" y="60" width="1320" height="690" rx="24" fill="#0C3833" stroke="#5EC2CC" stroke-opacity="0.25" stroke-width="2"/>
+  <rect x="110" y="120" width="340" height="36" rx="18" fill="#5EC2CC" fill-opacity="0.18"/>
+  <text x="135" y="143" font-family="monospace" font-size="14" font-weight="700" fill="#5EC2CC">PLATAFORMA HUMANITARIA · AVALADA UCV</text>
+  <text x="110" y="235" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="#F7F5F1">ConectaSalud</text>
+  <text x="110" y="290" font-family="system-ui, sans-serif" font-size="22" fill="#B5DBD7">Red de coordinación de insumos médicos, centros de acopio y voluntarios</text>
+  <!-- 3 Role Cards -->
+  <rect x="110" y="350" width="380" height="320" rx="18" fill="#071E1C" fill-opacity="0.8" stroke="#5EC2CC" stroke-opacity="0.3"/>
+  <text x="145" y="405" font-family="monospace" font-size="15" fill="#5EC2CC">01 · PERSONAL MÉDICO</text>
+  <text x="145" y="450" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F7F5F1">Solicitudes por urgencia</text>
+  <rect x="145" y="490" width="290" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.35"/>
+  <rect x="145" y="525" width="240" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.25"/>
+  <rect x="145" y="585" width="180" height="40" rx="20" fill="#E8703A" fill-opacity="0.25"/>
+  <text x="172" y="610" font-family="monospace" font-size="13" fill="#E8703A">+4.000 procesadas</text>
+
+  <rect x="530" y="350" width="380" height="320" rx="18" fill="#071E1C" fill-opacity="0.8" stroke="#5EC2CC" stroke-opacity="0.3"/>
+  <text x="565" y="405" font-family="monospace" font-size="15" fill="#5EC2CC">02 · CENTROS DE ACOPIO</text>
+  <text x="565" y="450" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F7F5F1">Inventario y despacho</text>
+  <rect x="565" y="490" width="290" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.35"/>
+  <rect x="565" y="525" width="250" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.25"/>
+
+  <rect x="950" y="350" width="380" height="320" rx="18" fill="#071E1C" fill-opacity="0.8" stroke="#5EC2CC" stroke-opacity="0.3"/>
+  <text x="985" y="405" font-family="monospace" font-size="15" fill="#5EC2CC">03 · VOLUNTARIOS</text>
+  <text x="985" y="450" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F7F5F1">Trazabilidad sin duplicar</text>
+  <rect x="985" y="490" width="290" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.35"/>
+  <rect x="985" y="525" width="230" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.25"/>
+</svg>

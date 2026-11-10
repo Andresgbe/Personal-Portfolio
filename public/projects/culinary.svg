@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" fill="none">
+  <rect width="1440" height="810" fill="#1A1208"/>
+  <rect x="60" y="60" width="1320" height="690" rx="24" fill="#261A0C" stroke="#D97706" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="110" y="120" width="320" height="36" rx="18" fill="#D97706" fill-opacity="0.2"/>
+  <text x="135" y="143" font-family="monospace" font-size="14" font-weight="700" fill="#FBBF24">CAMPUS GASTRONÓMICO · CARACAS</text>
+  <text x="110" y="240" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="#F7F5F1">Caracas Culinary Campus</text>
+  <text x="110" y="295" font-family="system-ui, sans-serif" font-size="22" fill="#E5D5C5">Plataforma educativa para diplomados, talleres y formación culinaria profesional</text>
+  
+  <rect x="110" y="360" width="380" height="310" rx="18" fill="#140E06" stroke="#D97706" stroke-opacity="0.3"/>
+  <text x="145" y="415" font-family="monospace" font-size="15" fill="#FBBF24">DIPLOMADOS PROFESIONALES</text>
+  <text x="145" y="460" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F7F5F1">Artes Culinarias &amp; Cocina</text>
+  <rect x="145" y="500" width="290" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.3"/>
+  <rect x="145" y="535" width="230" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.2"/>
+
+  <rect x="530" y="360" width="380" height="310" rx="18" fill="#140E06" stroke="#D97706" stroke-opacity="0.3"/>
+  <text x="565" y="415" font-family="monospace" font-size="15" fill="#FBBF24">PASTELERÍA &amp; PANADERÍA</text>
+  <text x="565" y="460" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F7F5F1">Técnicas Europeas</text>
+  <rect x="565" y="500" width="290" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.3"/>
+  <rect x="565" y="535" width="250" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.2"/>
+
+  <rect x="950" y="360" width="380" height="310" rx="18" fill="#140E06" stroke="#D97706" stroke-opacity="0.3"/>
+  <text x="985" y="415" font-family="monospace" font-size="15" fill="#FBBF24">ADMISIÓN &amp; POSTULACIONES</text>
+  <text x="985" y="460" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F7F5F1">Inscripciones Online</text>
+  <rect x="985" y="500" width="290" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.3"/>
+  <rect x="985" y="535" width="210" height="12" rx="6" fill="#F7F5F1" fill-opacity="0.2"/>
+</svg>

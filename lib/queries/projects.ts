@@ -139,29 +139,42 @@ export async function getProjectBySlug(slug: string): Promise<Project | undefine
     return fallbackProjects.find((project) => project.slug === slug);
   }
 
-  const supabase = createPublicClient();
+  try {
+    const supabase = createPublicClient();
 
-  const { data: projectRow } = await supabase
-    .from("software_projects")
-    .select("id, slug, title, category, year, description, role, stack, color, url")
-    .eq("slug", slug)
-    .maybeSingle();
+    const { data: projectRow, error: projectError } = await supabase
+      .from("software_projects")
+      .select("id, slug, title, category, year, description, role, stack, color, url")
+      .eq("slug", slug)
+      .maybeSingle();
 
-  if (projectRow) {
-    const { data: shotRows } = await supabase
-      .from("project_gallery_shots")
-      .select("id, project_id, caption, color, storage_path")
-      .eq("project_id", projectRow.id)
-      .order("sort_order", { ascending: true });
+    if (projectRow) {
+      const { data: shotRows } = await supabase
+        .from("project_gallery_shots")
+        .select("id, project_id, caption, color, storage_path")
+        .eq("project_id", projectRow.id)
+        .order("sort_order", { ascending: true });
 
-    return mapSoftwareProject(supabase, projectRow, shotRows ?? []);
+      return mapSoftwareProject(supabase, projectRow, shotRows ?? []);
+    }
+
+    const { data: automationRow, error: automationError } = await supabase
+      .from("automations")
+      .select("slug, title, year, description, role, stack, icon_name, color")
+      .eq("slug", slug)
+      .maybeSingle();
+
+    if (automationRow) {
+      return mapAutomation(automationRow);
+    }
+
+    if (projectError || automationError) {
+      return fallbackProjects.find((project) => project.slug === slug);
+    }
+  } catch (err) {
+    console.error("[queries/projects] getProjectBySlug failed, using fallback", err);
+    return fallbackProjects.find((project) => project.slug === slug);
   }
 
-  const { data: automationRow } = await supabase
-    .from("automations")
-    .select("slug, title, year, description, role, stack, icon_name, color")
-    .eq("slug", slug)
-    .maybeSingle();
-
-  return automationRow ? mapAutomation(automationRow) : undefined;
+  return fallbackProjects.find((project) => project.slug === slug);
 }

@@ -6,11 +6,10 @@ export type SiteSettings = {
   heroTagline: string;
 };
 
-// Same copy as today's hardcoded hero — the fallback when Supabase isn't
-// configured (see supabase/SETUP.md).
 const FALLBACK: SiteSettings = {
-  heroTitle: "Andrés Gil",
-  heroTagline: "Programador web. Construyo lo que sueñas.",
+  heroTitle: "Creamos el software que tu negocio *necesita*.",
+  heroTagline:
+    "Desarrollamos páginas web, sistemas a medida y *automatizaciones* para que vendas más y ahorres horas de trabajo manual.",
 };
 
 export async function getSiteSettings(): Promise<SiteSettings> {
@@ -25,6 +24,10 @@ export async function getSiteSettings(): Promise<SiteSettings> {
 
   if (error || !data) {
     console.error("[queries/site-settings] getSiteSettings failed, using fallback", error);
+    return FALLBACK;
+  }
+
+  if (data.hero_title?.trim() === "Andrés Gil") {
     return FALLBACK;
   }
 

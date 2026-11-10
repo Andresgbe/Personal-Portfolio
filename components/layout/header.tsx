@@ -1,47 +1,67 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Sparkles } from "lucide-react";
+import { AgmLogo } from "@/components/ui/agm-logo";
 import { MotionToggle } from "@/components/ui/motion-toggle";
 
 // Each category is its own route (English paths); labels stay Spanish (page copy).
 const NAV_LINKS = [
+  { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/services" },
-  { label: "Trabajos realizados", href: "/projects" },
-  { label: "Sobre mí", href: "/about" },
+  { label: "Proyectos & IA", href: "/projects" },
+  { label: "Nosotros", href: "/about" },
   { label: "Contacto", href: "/contact" },
 ];
 
-// Absolutely positioned (not fixed): it must only ever sit on top of the
-// hero's dark gradient, which it scrolls away with. No background/border of
-// its own, so it reads as part of the hero rather than a separate bar.
 export function Header() {
+  const pathname = usePathname();
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      {/* Below `lg` the links drop to their own full-width row and the switch
-          moves up next to the logo, so the header is always exactly two rows
-          instead of wrapping unpredictably into three. The `lg:` resets
-          restore the single-row desktop layout. Keeping this capped matters:
-          the header is absolutely positioned, so pages have to reserve their
-          own clearance for it (see PageShell). */}
-      <nav className="flex w-full flex-wrap items-center gap-x-6 gap-y-2 px-6 pt-8 pb-4 sm:gap-x-10 sm:px-20 sm:pt-12 sm:pb-6 lg:px-28">
-        {/* The wordmark from the brand manual: the name in ink, the period in
-            the primary blue. The dot is the whole logo — it's the one place
-            the accent appears in the header, so the nav stays quiet. */}
-        <Link href="/" className="font-display -my-2 py-2 text-lg text-ink">
-          Andrés Gil<span className="text-primary">.</span>
-        </Link>
-        <ul className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 sm:gap-x-6 lg:order-none lg:w-auto">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="flex min-h-10 items-center text-sm text-ink/80 transition-colors hover:text-ink"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-8 sm:pt-6">
+      <nav className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2.5 rounded-2xl border border-ink/12 bg-bg/80 px-4 py-3 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.65)] backdrop-blur-xl sm:px-6">
+        <AgmLogo />
+
+        <ul className="order-3 flex w-full flex-wrap items-center justify-center gap-1 border-t border-ink/8 pt-2 sm:gap-1.5 lg:order-none lg:w-auto lg:border-t-0 lg:pt-0">
+          {NAV_LINKS.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
+
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`relative flex min-h-9 items-center rounded-full px-3.5 py-1.5 text-xs font-medium transition-all sm:text-sm ${
+                    isActive
+                      ? "bg-ink/10 text-ink shadow-inner shadow-white/5"
+                      : "text-ink/70 hover:bg-ink/5 hover:text-ink"
+                  }`}
+                >
+                  {isActive && (
+                    <span
+                      aria-hidden="true"
+                      className="mr-1.5 size-1.5 rounded-full bg-primary"
+                    />
+                  )}
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
-        <div className="order-2 ml-auto lg:order-none">
+
+        <div className="order-2 ml-auto flex items-center gap-3 lg:order-none lg:ml-0">
           <MotionToggle />
+          <Link
+            href="/contact"
+            className="hidden items-center gap-1.5 rounded-full border border-primary/40 bg-primary/15 px-3.5 py-1.5 text-xs font-semibold text-ink transition-all hover:border-primary hover:bg-primary hover:text-bg sm:inline-flex"
+          >
+            <Sparkles className="size-3.5 text-primary group-hover:text-bg" />
+            Cotizar proyecto
+          </Link>
         </div>
       </nav>
     </header>

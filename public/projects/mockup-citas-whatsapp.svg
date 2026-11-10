@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" fill="none">
+  <!-- Dynamic dark background with glowing ambiance -->
+  <rect width="1440" height="810" fill="#07161B"/>
+  <defs>
+    <radialGradient id="waGlow1" cx="25%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="waGlow2" cx="80%" cy="65%" r="50%">
+      <stop offset="0%" stop-color="#5EC2CC" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#5EC2CC" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="phoneBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EC2CC" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#F7F5F1" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10" y="-10" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="810" fill="url(#waGlow1)"/>
+  <rect width="1440" height="810" fill="url(#waGlow2)"/>
+
+  <!-- Top App Navigation Bar -->
+  <rect x="70" y="40" width="1300" height="60" rx="16" fill="#0F262E" fill-opacity="0.9" stroke="#F7F5F1" stroke-opacity="0.1"/>
+  <circle cx="105" cy="70" r="14" fill="#22C55E"/>
+  <path d="M100 68 C100 64 103 61 107 61 C110 61 113 64 113 68 C113 72 108 76 105 78 L104 79 L104 80 L108 80" stroke="#07161B" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <text x="130" y="75" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#F7F5F1">AGM Health &amp; Services · Gestor Inteligente de Citas WhatsApp</text>
+  
+  <rect x="1060" y="53" width="170" height="34" rx="17" fill="#22C55E" fill-opacity="0.15" stroke="#22C55E" stroke-opacity="0.4"/>
+  <circle cx="1080" cy="70" r="4" fill="#22C55E"/>
+  <text x="1092" y="75" font-family="monospace" font-size="12" font-weight="700" fill="#22C55E">CALENDAR SYNC: ON</text>
+  
+  <rect x="1245" y="53" width="110" height="34" rx="17" fill="#E8703A"/>
+  <text x="1265" y="75" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#07161B">Ver agenda</text>
+
+  <!-- Left: Realistic Smartphone Frame with WhatsApp Chat (420px wide) -->
+  <g transform="translate(70, 120)">
+    <!-- Phone casing -->
+    <rect width="440" height="650" rx="36" fill="#050F13" stroke="url(#phoneBorder)" stroke-width="3" filter="url(#cardShadow)"/>
+    <!-- Dynamic Island / Speaker notch -->
+    <rect x="160" y="14" width="120" height="22" rx="11" fill="#000000"/>
+    <circle cx="260" cy="25" r="4" fill="#153540"/>
+
+    <!-- WhatsApp Header -->
+    <rect x="12" y="46" width="416" height="62" rx="16" fill="#0F262E" stroke="#F7F5F1" stroke-opacity="0.08"/>
+    <circle cx="45" cy="77" r="19" fill="#22C55E" fill-opacity="0.2"/>
+    <text x="45" y="83" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#22C55E" text-anchor="middle">CM</text>
+    <text x="75" y="71" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#F7F5F1">Centro Médico Integral</text>
+    <circle cx="232" cy="67" r="5" fill="#22C55E"/>
+    <text x="75" y="89" font-family="system-ui, sans-serif" font-size="11.5" fill="#5EC2CC">En línea · Asistente IA 24/7</text>
+
+    <!-- User message bubble -->
+    <rect x="140" y="125" width="270" height="52" rx="14" fill="#0C3833" stroke="#22C55E" stroke-opacity="0.3"/>
+    <text x="155" y="146" font-family="system-ui, sans-serif" font-size="12.5" fill="#F7F5F1">Hola, requiero cita de cardiología</text>
+    <text x="155" y="163" font-family="system-ui, sans-serif" font-size="12.5" fill="#F7F5F1">para este Jueves en la tarde.</text>
+    <text x="382" y="170" font-family="monospace" font-size="9" fill="#8CA8AE">14:22</text>
+
+    <!-- Bot AI response bubble -->
+    <rect x="25" y="190" width="370" height="155" rx="14" fill="#0F262E" stroke="#F7F5F1" stroke-opacity="0.1"/>
+    <text x="40" y="213" font-family="system-ui, sans-serif" font-size="12.5" fill="#F7F5F1">¡Hola Andrea! 👋 Con gusto te agendamos.</text>
+    <text x="40" y="232" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Dr. Carlos Méndez tiene estos turnos libres:</text>
+    
+    <!-- Time slot buttons -->
+    <rect x="40" y="246" width="95" height="30" rx="8" fill="#07161B" stroke="#5EC2CC" stroke-opacity="0.5"/>
+    <text x="58" y="266" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#5EC2CC">2:30 PM</text>
+    
+    <rect x="145" y="246" width="95" height="30" rx="8" fill="#22C55E" fill-opacity="0.25" stroke="#22C55E" stroke-opacity="0.8"/>
+    <text x="163" y="266" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#22C55E">4:15 PM ✓</text>
+
+    <rect x="250" y="246" width="95" height="30" rx="8" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.15"/>
+    <text x="268" y="266" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">5:45 PM</text>
+
+    <text x="40" y="303" font-family="monospace" font-size="10.5" fill="#E8703A">⚡ Cita reservada automáticamente</text>
+    <text x="365" y="337" font-family="monospace" font-size="9" fill="#8CA8AE">14:23</text>
+
+    <!-- Confirmed Appointment Card in WhatsApp -->
+    <rect x="25" y="360" width="370" height="135" rx="14" fill="#07161B" stroke="#22C55E" stroke-width="1.5"/>
+    <rect x="25" y="360" width="370" height="32" rx="14" fill="#22C55E" fill-opacity="0.15"/>
+    <text x="42" y="381" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#22C55E">✓ CITA MÉDICA CONFIRMADA · #MED-892</text>
+    
+    <text x="42" y="414" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Especialista:</text>
+    <text x="135" y="414" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#F7F5F1">Dr. Carlos Méndez (Cardiología)</text>
+
+    <text x="42" y="436" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Fecha y hora:</text>
+    <text x="135" y="436" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#E8703A">Jueves 14 Noviembre · 4:15 PM</text>
+
+    <text x="42" y="458" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Sede / Consultorio:</text>
+    <text x="155" y="458" font-family="system-ui, sans-serif" font-size="12" fill="#F7F5F1">Torre Médica Las Mercedes, Piso 4</text>
+    
+    <rect x="42" y="468" width="336" height="20" rx="4" fill="#5EC2CC" fill-opacity="0.1"/>
+    <text x="50" y="482" font-family="monospace" font-size="10.5" fill="#5EC2CC">Sincronizado en Google Calendar &amp; CRM</text>
+
+    <!-- Automated Reminder Message (24h before) -->
+    <rect x="25" y="510" width="370" height="110" rx="14" fill="#0F262E" stroke="#E8703A" stroke-opacity="0.5"/>
+    <text x="40" y="533" font-family="system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#E8703A">🔔 RECORDATORIO AUTOMÁTICO (24H ANTES):</text>
+    <text x="40" y="555" font-family="system-ui, sans-serif" font-size="12" fill="#F7F5F1">Hola Andrea, te recordamos tu cita de mañana.</text>
+    
+    <!-- Confirm / Reschedule buttons -->
+    <rect x="40" y="570" width="150" height="32" rx="8" fill="#22C55E"/>
+    <text x="55" y="591" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#07161B">Confirmar Asistencia ✓</text>
+
+    <rect x="200" y="570" width="130" height="32" rx="8" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.2"/>
+    <text x="218" y="591" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Reprogramar 🔄</text>
+  </g>
+
+  <!-- Right: Clinic / Business Operations Calendar Dashboard (820px wide) -->
+  <g transform="translate(540, 120)">
+    <rect width="830" height="650" rx="24" fill="#0F262E" stroke="#F7F5F1" stroke-opacity="0.1" stroke-width="1.5"/>
+
+    <!-- Dashboard Header -->
+    <g transform="translate(35, 30)">
+      <text x="0" y="16" font-family="monospace" font-size="12" font-weight="700" fill="#22C55E">PANEL DE OPERACIONES EN VIVO</text>
+      <text x="0" y="44" font-family="system-ui, sans-serif" font-size="22" font-weight="800" fill="#F7F5F1">Control de Agenda &amp; Reducción de Inasistencias</text>
+      
+      <!-- Metrics row -->
+      <g transform="translate(0, 70)">
+        <!-- Metric 1 -->
+        <rect width="240" height="85" rx="14" fill="#07161B" stroke="#22C55E" stroke-opacity="0.3"/>
+        <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Tasa de Asistencia Efectiva</text>
+        <text x="20" y="62" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#22C55E">94.8%</text>
+        <rect x="135" y="44" width="85" height="24" rx="12" fill="#22C55E" fill-opacity="0.15"/>
+        <text x="145" y="60" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#22C55E">+32% vs antes</text>
+
+        <!-- Metric 2 -->
+        <rect x="260" width="240" height="85" rx="14" fill="#07161B" stroke="#5EC2CC" stroke-opacity="0.3"/>
+        <text x="280" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Citas Agendadas x Bot</text>
+        <text x="280" y="62" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#5EC2CC">142</text>
+        <text x="340" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">esta semana</text>
+
+        <!-- Metric 3 -->
+        <rect x="520" width="240" height="85" rx="14" fill="#07161B" stroke="#E8703A" stroke-opacity="0.3"/>
+        <text x="540" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Inasistencias Evitadas</text>
+        <text x="540" y="62" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#E8703A">48 citas</text>
+        <rect x="665" y="44" width="75" height="24" rx="12" fill="#E8703A" fill-opacity="0.15"/>
+        <text x="675" y="60" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#E8703A">$1.920 salvd</text>
+      </g>
+    </g>
+
+    <!-- Calendar View with Live Bookings -->
+    <g transform="translate(35, 220)">
+      <text x="0" y="0" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#F7F5F1">Agenda Semanal · Sincronización Bidireccional</text>
+      
+      <!-- Days headers -->
+      <g transform="translate(0, 15)">
+        <rect width="145" height="32" rx="8" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.1"/>
+        <text x="72" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#8CA8AE" text-anchor="middle">Lunes 11</text>
+
+        <rect x="155" width="145" height="32" rx="8" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.1"/>
+        <text x="227" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#8CA8AE" text-anchor="middle">Martes 12</text>
+
+        <rect x="310" width="145" height="32" rx="8" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.1"/>
+        <text x="382" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#8CA8AE" text-anchor="middle">Miércoles 13</text>
+
+        <rect x="465" width="145" height="32" rx="8" fill="#22C55E" fill-opacity="0.15" stroke="#22C55E"/>
+        <text x="537" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#22C55E" text-anchor="middle">Jueves 14 (Hoy)</text>
+
+        <rect x="620" width="140" height="32" rx="8" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.1"/>
+        <text x="690" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#8CA8AE" text-anchor="middle">Viernes 15</text>
+      </g>
+
+      <!-- Calendar cards grid -->
+      <g transform="translate(0, 60)">
+        <!-- Thursday Bookings highlighted -->
+        <rect x="465" y="0" width="145" height="65" rx="10" fill="#07161B" stroke="#22C55E" stroke-opacity="0.6"/>
+        <text x="477" y="20" font-family="monospace" font-size="11" font-weight="700" fill="#22C55E">09:00 AM</text>
+        <text x="477" y="38" font-family="system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#F7F5F1">Mariana Rojas</text>
+        <text x="477" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#8CA8AE">Confirmado WhatsApp ✓</text>
+
+        <rect x="465" y="75" width="145" height="65" rx="10" fill="#07161B" stroke="#E8703A" stroke-opacity="0.8"/>
+        <text x="477" y="95" font-family="monospace" font-size="11" font-weight="700" fill="#E8703A">04:15 PM · NUEVA</text>
+        <text x="477" y="113" font-family="system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#F7F5F1">Andrea Salazar</text>
+        <text x="477" y="127" font-family="system-ui, sans-serif" font-size="10" fill="#5EC2CC">Cardiología · Agendada</text>
+
+        <!-- Other days cards -->
+        <rect x="0" y="0" width="145" height="65" rx="10" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.08"/>
+        <text x="12" y="20" font-family="monospace" font-size="11" fill="#8CA8AE">10:30 AM</text>
+        <text x="12" y="38" font-family="system-ui, sans-serif" font-size="11.5" fill="#8CA8AE">Luis Morales</text>
+        <text x="12" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#22C55E">Completada</text>
+
+        <rect x="155" y="25" width="145" height="65" rx="10" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.08"/>
+        <text x="167" y="45" font-family="monospace" font-size="11" fill="#8CA8AE">02:00 PM</text>
+        <text x="167" y="63" font-family="system-ui, sans-serif" font-size="11.5" fill="#8CA8AE">Beatriz Peña</text>
+        <text x="167" y="77" font-family="system-ui, sans-serif" font-size="10" fill="#22C55E">Completada</text>
+
+        <rect x="310" y="50" width="145" height="65" rx="10" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.08"/>
+        <text x="322" y="70" font-family="monospace" font-size="11" fill="#8CA8AE">11:15 AM</text>
+        <text x="322" y="88" font-family="system-ui, sans-serif" font-size="11.5" fill="#8CA8AE">Jorge Delgado</text>
+        <text x="322" y="102" font-family="system-ui, sans-serif" font-size="10" fill="#22C55E">Completada</text>
+
+        <rect x="620" y="10" width="140" height="65" rx="10" fill="#07161B" stroke="#F7F5F1" stroke-opacity="0.08"/>
+        <text x="632" y="30" font-family="monospace" font-size="11" fill="#8CA8AE">03:30 PM</text>
+        <text x="632" y="48" font-family="system-ui, sans-serif" font-size="11.5" fill="#8CA8AE">Carolina V.</text>
+        <text x="632" y="62" font-family="system-ui, sans-serif" font-size="10" fill="#5EC2CC">Recordatorio listo</text>
+      </g>
+    </g>
+
+    <!-- Bottom: Live Automation Flow & Rules Bar -->
+    <g transform="translate(35, 465)">
+      <rect width="760" height="135" rx="16" fill="#07161B" stroke="#5EC2CC" stroke-opacity="0.25"/>
+      <text x="24" y="32" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#F7F5F1">Reglas de Automatización Activas</text>
+      
+      <!-- Rule 1 -->
+      <g transform="translate(24, 48)">
+        <circle cx="10" cy="10" r="6" fill="#22C55E"/>
+        <text x="26" y="14" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#F7F5F1">Confirmación instantánea:</text>
+        <text x="180" y="14" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Crea evento en Google Calendar y notifica al especialista en 2 segundos.</text>
+      </g>
+
+      <!-- Rule 2 -->
+      <g transform="translate(24, 76)">
+        <circle cx="10" cy="10" r="6" fill="#E8703A"/>
+        <text x="26" y="14" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#F7F5F1">Recordatorio interactivo 24h:</text>
+        <text x="205" y="14" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Si el paciente cancela, el horario se libera de inmediato para otros clientes.</text>
+      </g>
+
+      <!-- Rule 3 -->
+      <g transform="translate(24, 104)">
+        <circle cx="10" cy="10" r="6" fill="#5EC2CC"/>
+        <text x="26" y="14" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#F7F5F1">Alerta de ubicación 2h antes:</text>
+        <text x="195" y="14" font-family="system-ui, sans-serif" font-size="12" fill="#8CA8AE">Envía link de Google Maps, instrucciones de llegada y estacionamiento.</text>
+      </g>
+    </g>
+  </g>
+</svg>
