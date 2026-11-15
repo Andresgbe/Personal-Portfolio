@@ -4,45 +4,43 @@ export type Service = {
   description: string;
 };
 
-// Fallback data — used by lib/queries/services.ts only when Supabase isn't
-// configured (see supabase/SETUP.md). Once it is, this is edited from
-// /admin, not here; kept in sync as the seed data in
-// supabase/migrations/0001_init.sql.
+// Fallback data — used by lib/queries/services.ts when Supabase isn't
+// configured. Adapted for AGM Software Agency.
 export const services: Service[] = [
   {
     icon_name: "AppWindow",
-    title: "Plataformas web a medida",
+    title: "Plataformas web y SaaS a medida",
     description:
-      "Aplicaciones completas con base de datos y hosting. Ideal si tu proyecto necesita lógica de negocio real, no solo un sitio estático.",
+      "Aplicaciones web completas con autenticación, base de datos relacional y arquitectura escalable. Ideal cuando tu negocio necesita lógica real y no solo una página informativa.",
   },
   {
     icon_name: "Rocket",
-    title: "Landing pages",
+    title: "Landing pages de alta conversión",
     description:
-      "Sitios rápidos, optimizados y con diseño propio para presentar tu marca, producto o servicio online.",
+      "Sitios ultra rápidos, con identidad visual propia, animaciones fluidas y estructura persuasiva diseñada para convertir visitantes en clientes reales.",
   },
   {
     icon_name: "Bot",
-    title: "Automatizaciones y chatbots",
+    title: "Automatizaciones y Agentes IA",
     description:
-      "Flujos automatizados, integraciones entre plataformas y chatbots para WhatsApp o Instagram que responden mientras duermes.",
-  },
-  {
-    icon_name: "RefreshCw",
-    title: "Migración y modernización de sitios",
-    description:
-      "¿Tu sitio actual es lento o quedó viejo? Lo migro a un stack moderno (React/Next.js) sin perder tu contenido ni tu posicionamiento en Google.",
+      "Flujos autónomos en n8n/Make, integraciones entre sistemas y agentes con IA para WhatsApp o Instagram que califican leads, agendan y responden 24/7.",
   },
   {
     icon_name: "LayoutDashboard",
-    title: "Dashboards y paneles administrativos",
+    title: "Dashboards y sistemas administrativos",
     description:
-      "Interfaces internas para que gestiones tu propio negocio — pedidos, inventario, usuarios — sin depender de hojas de cálculo.",
+      "Paneles internos a medida (ERP, CRM, control de inventario, finanzas y operaciones) para que gestiones tu empresa en tiempo real sin depender de hojas de cálculo.",
+  },
+  {
+    icon_name: "RefreshCw",
+    title: "Migración y modernización tecnológica",
+    description:
+      "¿Tu sistema actual es lento o quedó obsoleto? Lo migramos a un stack moderno (Next.js, TypeScript, Cloud) multiplicando su velocidad y manteniendo tu SEO.",
   },
   {
     icon_name: "Wrench",
-    title: "Mantenimiento y soporte continuo",
+    title: "Partner tecnológico y soporte continuo",
     description:
-      "Acompañamiento técnico mensual para que tu sitio siga funcionando, actualizado y seguro, sin que tengas que preocuparte por eso.",
+      "Acompañamiento de ingeniería mensual: monitoreo, nuevas funcionalidades, actualizaciones de seguridad y optimización constante de tu infraestructura.",
   },
 ];

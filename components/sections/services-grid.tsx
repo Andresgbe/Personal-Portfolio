@@ -8,7 +8,7 @@ import { resolveIcon } from "@/lib/icons/registry";
 const container: Variants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -17,14 +17,11 @@ export function ServicesGrid({ services }: { services: Service[] }) {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.15 }}
       variants={container}
       className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
-      {services.map((service) => {
-        // Resolved once per service here, then passed down as a prop —
-        // ServiceCard renders it via destructuring (like AutomationRow does
-        // for automations), not by calling resolveIcon in its own render.
+      {services.map((service, index) => {
         const icon = resolveIcon(service.icon_name);
         return (
           <ServiceCard
@@ -32,6 +29,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
             icon={icon}
             title={service.title}
             description={service.description}
+            index={index}
           />
         );
       })}

@@ -1,28 +1,45 @@
 @import "tailwindcss";
 
-/* ── Marca Andrés Gil · "Dark Dev" ────────────────────────────────────────
-   Paleta oficial (septiembre 2026). Los nombres son los mismos del manual
-   de marca, para que un token del PDF se pueda buscar tal cual en el código.
-   Regla de proporción: 60% fondo · 25% texto · 10% primario · 5% secundario,
-   es decir el cian se reserva para una o dos palabras/detalles por vista. */
+/* ── Marca AGM Software Agency · Oscuro (por defecto) y Claro ─────────────
+   Tokens semánticos (--bg, --surface, --text, --muted, --primary, --secondary)
+   que cambian automáticamente cuando html[data-theme="light"] está activo. */
 :root {
-  --bg: #0b0f13;
-  --surface: #12171c; /* tarjetas */
-  --text: #f5f6f7; /* blanco suave: nunca #ffffff puro */
-  --muted: #8d96a0; /* texto secundario */
-  --primary: #3d8bff; /* botones, CTA, links */
-  --secondary: #00d4c8; /* palabra clave, detalles tipo terminal */
+  --bg: #07161b; /* petróleo abisal — base */
+  --surface: #0f262e; /* tarjetas y paneles elevados */
+  --surface-elevated: #153540;
+  --text: #f7f5f1; /* blanco cálido suave */
+  --muted: #8ca8ae; /* gris-azulado para texto secundario */
+  --primary: #e8703a; /* naranja terracota vibrante */
+  --secondary: #5ec2cc; /* cian-petróleo luminoso */
 
-  /* Cielo y colinas del hero. Tintes neutros derivados de --bg y --surface:
-     el paisaje da profundidad sin meter un color fuera de la paleta. */
-  --hero-sky-top: #161d24;
+  --hero-sky-top: #12313b;
   --hero-sky-bottom: var(--bg);
-  --hero-hill-back: #10151a;
-  --hero-hill-mid: #161d24;
-  --hero-hill-front: #1e2730;
+  --hero-hill-back: #0a1f26;
+  --hero-hill-mid: #0f2932;
+  --hero-hill-front: #153540;
 
-  /* Un escalón por encima del fondo, para las secciones después del hero. */
-  --section-bg: var(--surface);
+  --section-bg: #0b1e25;
+  --grid-line: rgba(247, 245, 241, 0.035);
+}
+
+/* Paleta oficial AGM Light (extraída de 05_AGM_Logo_Horizontal_Light.svg) */
+html[data-theme="light"] {
+  --bg: #f7f5f1; /* crema cálido de marca */
+  --surface: #ffffff; /* tarjetas blancas limpias */
+  --surface-elevated: #efeae1;
+  --text: #0f2e36; /* petróleo profundo para titulares y texto */
+  --muted: #4c7c82; /* verde-azulado pizarra para texto secundario */
+  --primary: #e8703a; /* naranja terracota oficial */
+  --secondary: #1b6f7a; /* petróleo medio con alto contraste sobre fondo claro */
+
+  --hero-sky-top: #e7e1d6;
+  --hero-sky-bottom: var(--bg);
+  --hero-hill-back: #ece7dc;
+  --hero-hill-mid: #e3ddd0;
+  --hero-hill-front: #d9d1c2;
+
+  --section-bg: #f1ede6;
+  --grid-line: rgba(15, 46, 54, 0.05);
 }
 
 @theme inline {
@@ -41,32 +58,56 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
-/* Tailwind doesn't generate a utility for custom --font-* theme keys that
-   aren't sans/serif/mono, so this is a plain rule instead of `@theme`. */
 .font-display {
   font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .hero-sky {
-  background: radial-gradient(
-    120% 100% at 50% -10%,
-    var(--hero-sky-top) 0%,
-    var(--hero-sky-bottom) 65%
-  );
+  background:
+    radial-gradient(
+      90% 70% at 75% 15%,
+      rgba(232, 112, 58, 0.11) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      80% 70% at 20% 10%,
+      rgba(94, 194, 204, 0.12) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      120% 100% at 50% -10%,
+      var(--hero-sky-top) 0%,
+      var(--hero-sky-bottom) 68%
+    );
 }
 
-/* Continues the hero's gradient into a slightly lighter tone, so sections
-   after it don't cut abruptly. */
 .section-sky {
-  background: linear-gradient(
-    180deg,
-    var(--hero-sky-bottom) 0%,
-    var(--section-bg) 100%
-  );
+  background:
+    radial-gradient(
+      70% 50% at 85% 5%,
+      rgba(232, 112, 58, 0.07) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      var(--hero-sky-bottom) 0%,
+      var(--section-bg) 100%
+    );
+}
+
+.bg-tech-grid {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
 }
 
 .hill-layer {
@@ -99,50 +140,60 @@ body {
   }
 }
 
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hill-layer,
   .animate-float,
-  .animate-ping {
+  .animate-ping,
+  .animate-pulse-glow {
     animation: none;
   }
 }
 
-/* Manual override from the header switch — independent of OS preference. */
 [data-motion="off"] .hill-layer,
 [data-motion="off"] .animate-float,
-[data-motion="off"] .animate-ping {
+[data-motion="off"] .animate-ping,
+[data-motion="off"] .animate-pulse-glow {
   animation: none;
 }
 
-/* The header switch renders its own state from this attribute instead of from
-   React state — the attribute is set before first paint (and before
-   hydration), so the switch is never briefly in the wrong position. */
-.motion-switch {
-  background-color: rgb(245 246 247 / 0.12);
+/* Interruptor de tema (Modo Oscuro / Modo Claro) */
+.theme-switch {
+  background-color: color-mix(in oklab, var(--text) 12%, transparent);
 }
 
-.motion-switch-knob {
+.theme-switch-knob {
   transform: translateX(0);
 }
 
-[data-motion="off"] .motion-switch {
+html[data-theme="light"] .theme-switch {
   background-color: var(--primary);
 }
 
-[data-motion="off"] .motion-switch-knob {
+html[data-theme="light"] .theme-switch-knob {
   transform: translateX(1.25rem);
 }
 
-/* ── View transitions: a project card morphing into its detail hero ──────── */
-
-/* The transition overlay swallows pointer events while it runs — let clicks
-   through to the live page underneath. */
+/* ── View transitions ─────────────────────────────────────────────────────── */
 ::view-transition {
   pointer-events: none;
 }
 
-/* Page-level crossfade. Deliberately quick and opacity-only so it doesn't
-   compete with the morph happening on top of it. */
 ::view-transition-old(root) {
   animation: 140ms ease-in both vt-fade-out;
 }
@@ -151,16 +202,11 @@ body {
   animation: 220ms ease-out 60ms both vt-fade-in;
 }
 
-/* The morph itself (the `share="morph"` pairs in ProjectCard/ProjectHero).
-   Short enough to read as direct rather than heavy. */
 ::view-transition-group(.morph) {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-/* A touch of blur mid-flight hides the pixel stretching while a small 4:3
-   card becomes a full-bleed hero. Duration is set here too — animation
-   properties don't cascade from the group to this pseudo-element. */
 ::view-transition-image-pair(.morph) {
   animation: 300ms ease-in-out both vt-morph-blur;
 }
@@ -183,10 +229,6 @@ body {
   }
 }
 
-/* "Light version" (and an OS reduced-motion preference) cut the transition to
-   an instant swap — the browser's own no-animation behaviour. The pseudo
-   element tree hangs off the root element, so these attach to `html` with no
-   descendant combinator. */
 html[data-motion="off"]::view-transition-group(*),
 html[data-motion="off"]::view-transition-old(*),
 html[data-motion="off"]::view-transition-new(*),

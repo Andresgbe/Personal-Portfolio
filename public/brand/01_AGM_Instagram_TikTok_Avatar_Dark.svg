@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+  <defs>
+  <style>
+    .font-brand {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Plus Jakarta Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    .font-sub {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'JetBrains Mono', 'Segoe UI', Roboto, monospace, sans-serif;
+    }
+  </style>
+</defs>
+  <rect width="1080" height="1080" fill="#0F2E36" />
+  <g transform="translate(540, 540) scale(4.2)">
+    <g transform="scale(1.0) translate(-100, -100)">
+      <path d="M100 28 L162 64 L100 100 L38 64 Z" fill="#E8703A" />
+      <path d="M100 42 L138 64 L100 86 L62 64 Z" fill="#F7F5F1" opacity="0.22" />
+      <path d="M38 64 L100 100 L100 172 L38 136 Z" fill="#0A2026" />
+      <path d="M52 82 L88 103 L88 152 L52 131 Z" fill="#153C46" />
+      <path d="M100 100 L162 64 L162 136 L100 172 Z" fill="#4C7C82" />
+      <path d="M112 103 L148 82 L148 131 L112 152 Z" fill="#385F65" />
+    </g>
+  </g>
+</svg>

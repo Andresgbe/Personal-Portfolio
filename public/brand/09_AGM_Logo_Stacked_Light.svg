@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1800" viewBox="0 0 800 900" fill="none">
+  <defs>
+  <style>
+    .font-brand {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Plus Jakarta Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    .font-sub {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'JetBrains Mono', 'Segoe UI', Roboto, monospace, sans-serif;
+    }
+  </style>
+</defs>
+  <rect width="800" height="900" fill="#F7F5F1" />
+  <g transform="translate(400, 310) scale(2.8)">
+    <g transform="scale(1.0) translate(-100, -100)">
+      <path d="M100 28 L162 64 L100 100 L38 64 Z" fill="#E8703A" />
+      <path d="M100 42 L138 64 L100 86 L62 64 Z" fill="#F7F5F1" opacity="0.35" />
+      <path d="M38 64 L100 100 L100 172 L38 136 Z" fill="#0F2E36" />
+      <path d="M52 82 L88 103 L88 152 L52 131 Z" fill="#1C4B56" />
+      <path d="M100 100 L162 64 L162 136 L100 172 Z" fill="#4C7C82" />
+      <path d="M112 103 L148 82 L148 131 L112 152 Z" fill="#3B656B" />
+    </g>
+  </g>
+  <text x="400" y="640" text-anchor="middle" class="font-brand" font-size="115" font-weight="900" letter-spacing="0.08em" fill="#0F2E36">AGM</text>
+  <text x="400" y="715" text-anchor="middle" class="font-sub" font-size="28" font-weight="700" letter-spacing="0.24em" fill="#4C7C82">SOFTWARE AGENCY</text>
+</svg>
